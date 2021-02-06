@@ -3,11 +3,11 @@
 
 ## Table of content
 - [Function 網站功能](#Function)
-- [How to use 如何使用這個網站](#How to use)
+- [How to use 如何使用這個網站](#How To Use)
 - [Structure 網站結構](#Structure)
   - [Component 程式碼說明]()
   - [Container 程式碼說明]()
-- [Some note 一些心得筆記](#Some note)
+- [Notes 一些心得筆記](#Notes)
 
 ## Function
 
@@ -16,4 +16,4 @@
 ## Structure
 ### Component
 ### Container
-## Some note
+## Notes
