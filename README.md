@@ -10,8 +10,17 @@
 - [Notes 一些心得筆記](#Notes)
 
 ## Function
+本專案實作了兩個大功能，分別是卡組編輯器、卡片商城（包含：商品頁面與購物車）。
+- 卡組編輯器：讓用戶能從卡片資料庫中點擊卡片，組成一副牌組。
+- 卡片商城：模擬一般電商有的基本功能：顯示商品、將商品加入購物車與移除商品。
 
 ## How to use
+### 安裝與執行
+1) Run `npm install` in the extracted folder
+2) Run `npm start` to view the project
+### 功能解說
+- Navigation Bar : 在搜尋欄中輸入想購買的卡片，按下右方，會得到符合搜尋條件的結果頁
+- 中間搜尋欄則會即時反饋搜尋內容
 
 ## Structure
 ### Component
