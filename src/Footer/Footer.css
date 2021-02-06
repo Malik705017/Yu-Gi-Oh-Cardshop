@@ -1,0 +1,14 @@
+.footer{
+
+    background-color: rgb(40,103,178);
+    color:white;
+    height:200px;
+    margin-top:200px;
+
+    
+    /* 讓Footer中的文字置中 start */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 讓Footer中的文字置中 end */
+}

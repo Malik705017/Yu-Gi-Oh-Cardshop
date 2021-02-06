@@ -1,0 +1,51 @@
+.CardProduct
+{
+    display: flex;
+    padding: 10px 5px;
+    width:300px;
+    background-color: rgb(40,103,178);
+    border-radius: 10px;
+}
+
+.CardInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* align-content: center; */
+    flex-direction: column;
+    width: 63%;
+}
+
+.CardInfo > p{
+    font-size: 12px;
+}
+
+
+.CardInfo > button {
+    width: 60%;
+    text-align: center;
+    color: black;
+    border: 0px;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    margin-top: 10px;
+    cursor: pointer;
+
+    /*讓button內的文字與圖片可並排顯示*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* position: absolute; /*母元素 relative + 子元素 absolute 可達到固定相對位置的效果（且會使子元素不受某元素display flex影響）*/
+    /* bottom: 30px; */ 
+}
+
+.CardInfo > button:hover{
+    background-color: rgb(162, 184, 240);
+}
+
+.cartIcon{
+    width: 14px;
+}
+
+

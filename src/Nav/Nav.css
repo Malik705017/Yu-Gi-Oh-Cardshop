@@ -1,0 +1,54 @@
+.header{
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100vw;
+    height: 100px;
+    overflow: hidden;
+    background-color: rgb(40,103,178);
+}
+.main-nav{
+    display:flex;
+    align-items: center;
+    list-style:none;
+    font-size:1em;
+    /*margin:0;*/
+}
+.push{
+    display:flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 50px;
+}
+.main-nav li{
+    padding: 0 20px; /*讓每個li有間隔距離*/
+    cursor: pointer;
+    color:#f5f5f6;
+}
+
+.main-nav li:hover {
+    opacity: 0.8; /*讓顏色變淡*/
+}
+
+.search{
+    padding:20px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 0px 2%;
+}
+
+#productName{
+    width: 80%;
+}
+
+.addSearchIcon{
+    background-image: url(https://imgur.com/CwS6GdA.png); /* 16px x 16px */
+    background-color: #ffffff; /* make the button transparent */
+    background-repeat: no-repeat;  /* make the background image appear only once */
+    background-position: 6px 6px;  /* equivalent to 'top left' */
+    border: none;           /* assuming we don't want any borders */
+    cursor: pointer;        /* make the cursor like hovering over an <a> element */
+    height: 30px;           /* make this the size of your image */
+    width: 30px;
+    border-radius: 4px;
+}
