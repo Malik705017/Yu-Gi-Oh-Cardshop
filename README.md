@@ -1,4 +1,4 @@
-# Side Project 1 - 遊戲王卡購物網站
+# Side Project  - 遊戲王卡購物網站
 這是我在上了 Udemy 的 React 課程 [React - the complete guide](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) 的前五章節後，以 React 為前端框架寫的簡易版購物網站，這份文件將會涵蓋以下內容，對自己的學習做點紀錄之餘，也能讓大家了解如何使用這個專案。
 
 ![展示頁](https://imgur.com/jnR7AZO.png)
