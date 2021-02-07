@@ -29,8 +29,8 @@
 - Deck Builder : 
 ## Structure
 此專案的結構相對單純，僅使用到 1 個 container 和 11 個 component，關係如下：
-<div align = center>![架構圖](https://imgur.com/w37YrJk.png)
-
+![架構圖](https://imgur.com/w37YrJk.png)
+ 
 ### Container
 ```javascript
   state = {
