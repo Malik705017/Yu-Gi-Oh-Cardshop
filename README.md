@@ -26,6 +26,24 @@
 - Shop Cart : 購物車。先前加入過的商品都會記錄在此，點選移除購物車按鈕就能將商品從購物車刪除。右方小計欄位會**會即時反饋金額加總與商品清單**
 - Deck Builder : 
 ## Structure
+### Container
+本次專案只用到一個 container : APP。
+```javascript
+  state = {
+      decklist : [], /*卡組編輯器使用，儲存使用者的卡組*/
+      db : DataBase, /*卡組編輯器使用，儲存所有的卡片資訊*/
+      shop: DataBase.slice(0,(DataBase.length)/5-1), /*商城使用，儲存哪些商品會被顯示在商城頁面上*/
+      shopCart:[], /*購物車使用，儲存哪些商品會被顯示在購物車頁面上*/
+      showButton: true,
+      searchCardName: '',
+      searchProductName:'',
+      searchPNameFromNav:'',
+      currentPage:1,
+      mode:0
+  }
+```
+上方的 state 中，
+
 ### Component
 本專案共使用了 11 個 component，分組整理如下：
 - Card：最基本的元素，不論是商城功能或是卡組編輯器功能都會使用到它。
@@ -42,7 +60,7 @@ const Card = (props) => {
     )
 }
 ```
-- CardProduct
+- CardProduct : 是商城、購物車中會出現的元素。
 ```javascript
 const CardProduct = (props) => {
 
@@ -68,7 +86,7 @@ const CardProduct = (props) => {
     )
 }
 ```
-- CardGallery
+- CardGallery : 是商城主要顯示
 - Deck
 -
 -
@@ -76,6 +94,5 @@ const CardProduct = (props) => {
 -
 -
 -
-### Container
 
 ## Notes
