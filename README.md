@@ -29,7 +29,8 @@
 ### Component
 本專案共使用了 11 個 component，分組整理如下：
 - Card：最基本的元素
-```const Card = (props) => {
+```
+const Card = (props) => {
 
     const style = {
         cursor: 'pointer'
@@ -39,7 +40,8 @@
             <img alt = "yu-gi-oh card" src = {props.src} onClick = {props.click} style={style}/>  
         </div>
     )
-}```
+}
+```
 - CardDB
 - CardProduct
 - CardGallery
