@@ -24,12 +24,12 @@
 - Navigation Bar : 在搜尋欄中輸入想購買的卡片，按下右方，會在 Card Shop 區塊得到符合搜尋條件的結果。
 - Card Shop : 呈現商品的地方。在中間搜尋欄輸入想購買的卡片**會即時反饋搜尋內容**，點選加入購物車按鈕就會將商品放到購物車頁面中。換頁按鈕則會
 - Shop Cart : 購物車。先前加入過的商品都會記錄在此，點選移除購物車按鈕就能將商品從購物車刪除。右方小計欄位會**會即時反饋金額加總與商品清單**
-
+- Deck Builder : 
 ## Structure
 ### Component
 本專案共使用了 11 個 component，分組整理如下：
-- Card：最基本的元素
-```
+- Card：最基本的元素，不論是商城功能或是卡組編輯器功能都會使用到它。
+```javascript
 const Card = (props) => {
 
     const style = {
@@ -42,8 +42,32 @@ const Card = (props) => {
     )
 }
 ```
-- CardDB
 - CardProduct
+```javascript
+const CardProduct = (props) => {
+
+    let text = "加入購物車";
+    let clickFuncInput = props.name ;
+
+    if (props.add === false){
+        text = "移除此商品";
+        clickFuncInput = props.index ;
+    }
+
+    return(
+        <div className = "CardProduct">
+            <Card src = {props.src} click = {console.log('click')}/>
+            <div className = "CardInfo">
+                <div className = "BasicInfo">
+                    <p>{props.name}</p>
+                    <p>USD： {props.price}</p>
+                </div>
+                <button onClick = { () => {props.click(clickFuncInput)}}>{text}<img class = "cartIcon" alt="購物車" src = "https://i.imgur.com/NAwHDGt.png"/>
+            </div>
+        </div>
+    )
+}
+```
 - CardGallery
 - Deck
 -
