@@ -16,11 +16,14 @@
 
 ## How to use
 ### 安裝與執行
+0) `package.json` store the info of environment 
 1) Run `npm install` in the extracted folder
 2) Run `npm start` to view the project
+
 ### 功能解說
-- Navigation Bar : 在搜尋欄中輸入想購買的卡片，按下右方，會得到符合搜尋條件的結果頁
-- 中間搜尋欄則會即時反饋搜尋內容
+- Navigation Bar : 在搜尋欄中輸入想購買的卡片，按下右方，會在 Card Shop 區塊得到符合搜尋條件的結果。
+- Card Shop : 呈現商品的地方。在中間搜尋欄輸入想購買的卡片**會即時反饋搜尋內容**，點選加入購物車按鈕就會將商品放到購物車頁面中。換頁按鈕則會
+- Shop Cart : 購物車。先前加入過的商品都會記錄在此，點選移除購物車按鈕就能將商品從購物車刪除。右方小計欄位會**會即時反饋金額加總與購物車清單**
 
 ## Structure
 ### Component
