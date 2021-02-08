@@ -7,8 +7,15 @@
 - [Function 網站功能](#Function)
 - [How to use 如何使用這個網站](#How-to-use)
 - [Structure 網站結構](#Structure)
-  - [Container 程式碼說明](##Container)
-  - [Component 程式碼說明](##Component)
+  - [Container 程式碼說明](#Container)
+  - [Component 程式碼說明](#Component)
+    - [Card](#Card)
+    - [CardProduct](#CardProduct)
+    - [CardGallery](#CardGallery)
+    - [CardDB](#CardDB)
+    - [Deck](#Deck)
+    - [Scroll](#Scroll)
+    - [SearchBox](#SearchBox)
 - [Notes 一些心得筆記](#Notes)
 
 ## Function
@@ -48,7 +55,7 @@
 ```
 
 ### Component
-- Card
+#### Card
 ```javascript
 const Card = (props) => {
 
@@ -84,7 +91,7 @@ removeCardHandler = (cardIndex) => {
 }
 ```
 
-- CardProduct
+#### CardProduct
 ```javascript
 const CardProduct = (props) => {
 
@@ -122,7 +129,7 @@ button 在 onClick 後會執行 `addProductHandler`，將商品加入購物車�
     alert('成功加入至購物車');
   }
 ```
-- CardGallery
+#### CardGallery
 ```javascript
 const CardGallery = (props) => {
 
@@ -206,7 +213,7 @@ nextPageHandler = (next) => {
 }
 ```
 
-- CardDB
+#### CardDB
 ```javascript
 const CardDB = (props) => {
     const db = [...props.db];
@@ -236,7 +243,7 @@ const CardDB = (props) => {
 ```
 此元素顯示有哪些卡片在「資料庫」當中，會傳入`deckBuildHandler`這個函式。當Card元素被點擊時，就會將該卡片加入使用者編輯的卡組中。
 
-- Deck
+#### Deck
 ```javascript
 const Deck = (props) => {
     return(
@@ -264,7 +271,7 @@ const Deck = (props) => {
 此元素顯示了現在使用者編輯的卡組內容。元素組成分兩個部分，第一個 `div` 中顯示現在有多少卡，以及有一個 `button` 按下後會執行 `clearDeckHandler ` 將卡組中的所有卡片清空。第二個 `div` 則會顯示當前卡組有的卡片，其中 `Card` 元素傳入的 `click` 參數是 `removeCardHandler`，因此點擊時就會將該卡移除。
 
 其他元素：
-- Scroll
-- SearchBox
+#### Scroll
+#### SearchBox
 
 ## Notes
