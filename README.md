@@ -8,6 +8,16 @@
 - [How to use 如何使用這個網站](#How-to-use)
 - [Structure 網站結構](#Structure)
   - [Container 程式碼說明](#Container)
+    - deckBuildHandler
+    - removeCardHandle
+    - clearDeckHandler
+    - searchCardChangeHandler
+    - searchProductChangeHandler
+    - nextPageHandler
+    - addProductHandler
+    - removeProductHandler
+    - switchHandler
+    
   - [Component 程式碼說明](#Component)
     - [Card](#Card)
     - [CardProduct](#CardProduct)
@@ -55,6 +65,17 @@
       mode:0 /*控制現在畫面應該顯示哪種服務：0為商城,1為卡組編輯器,2為購物車,3為「顯示搜尋結果」的商城*/
   }
 ```
+container 運用到了 9 個函式，以下列舉9個函式的功能：
+- deckBuildHandler：`Card`被點擊時所執行，會將`Card`的資訊存到`state`的`decklist`中。
+- removeCardHandle：`Card`被點擊時所執行，會將`state`的`decklist`中所儲存的該卡移除。
+- clearDeckHandler：`Deck`中的 button 被點擊時所執行，會將`state`的`decklist`中「所有」儲存的卡清空。
+- searchCardChangeHandler：`CardDB`中的`SearchBox`被輸入時所執行，會即時將輸入的字更新在`state`的`searchCardName`中。
+- searchProductChangeHandler：`CardGallery`中的`SearchBox`被輸入時所執行，會即時將輸入的字更新在`state`的`searchProductName`中。
+- nextPageHandler：`CardGallery`中的換頁 button 被點擊時所執行，會將`state`的`currentPage`-1或＋1，並且更新`shop`的內容。
+- addProductHandler：`CardProduct`中的加入購物車button被點擊時所執行，會將`state`的`shopCart`加入點擊的商品
+- removeProductHandler：`CardProduct`中的移除購物車button被點擊時所執行，會將`state`的`shopCart`移除點擊的商品
+- switchHandler：`Nav`中的標籤或搜尋button被點擊時所執行，會將`state`的`mode`切換到對應的服務內容，0為商城,1為卡組編輯器,2為購物車,3為「顯示搜尋結果」的商城。
+
 
 ### Component
 #### Card
