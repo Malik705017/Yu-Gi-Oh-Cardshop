@@ -14,6 +14,8 @@
     - [CardGallery](#CardGallery)
     - [CardDB](#CardDB)
     - [Deck](#Deck)
+    - [Nav](#Nav)
+    - [Footer](#Footer)
     - [Scroll](#Scroll)
     - [SearchBox](#SearchBox)
 - [Notes 一些心得筆記](#Notes)
@@ -270,8 +272,146 @@ const Deck = (props) => {
 ```
 此元素顯示了現在使用者編輯的卡組內容。元素組成分兩個部分，第一個 `div` 中顯示現在有多少卡，以及有一個 `button` 按下後會執行 `clearDeckHandler ` 將卡組中的所有卡片清空。第二個 `div` 則會顯示當前卡組有的卡片，其中 `Card` 元素傳入的 `click` 參數是 `removeCardHandler`，因此點擊時就會將該卡移除。
 
-其他元素：
+#### ShoppingCart
+```javascript
+const ShoppingCart = (props) => {
+
+    /*計算總價*/
+    let totalPrice = 0;
+
+    for(let i = 0 ; i <  props.cards.length ; i++){
+        totalPrice += parseFloat(props.cards[i].card_prices[0].amazon_price);
+    }
+
+    /*小數四捨五入（直接copy別人的函式XD）*/
+    var roundDecimal = function (val, precision) {
+        return Math.round(Math.round(val * Math.pow(10, (precision || 0) + 1)) / 10) / Math.pow(10, (precision || 0));
+    }
+
+    totalPrice = roundDecimal(totalPrice,2);
+
+    const pStyle = {
+        fontSize:'20px'
+    }
+
+
+    return(
+        <div className = "ShoppingCart">
+            <div className = "CardGallery W-70">
+                { props.cards.map( (aCard,index) => {
+                    return ( <CardProduct 
+                                key = {aCard.id}
+                                index = {index}
+                                src = {aCard.card_images[0].image_url}
+                                name = {aCard.name}
+                                price = {aCard.card_prices[0].amazon_price}
+                                click = {props.click}
+                                add = {false}
+                                />  
+                                )
+                            }
+                        )
+                }
+            </div>
+            <div className = "CartList">
+                <p style = {pStyle}>小計：${totalPrice}</p>
+                <div>
+                { props.cards.map( (aCard,index) => {
+                    return( 
+                            <div className = "ListItem">
+                                <p>{index+1}.</p>
+                                <p>{aCard.name}</p>
+                                <p className = "itemPrice">{aCard.card_prices[0].amazon_price}</p>
+                            </div>
+                        )
+                        }
+                    )
+                }
+                </div>
+            </div>
+        </div>
+    )
+}
+```
+`ShoppingCart`一樣分兩個部分，分別呈現在畫面的左右兩邊。左方會顯示購物車有哪些商品以及價格（引入`CardProduct`），右方則是結帳清單，計算目前的總金額與所有商品品項清單。這邊CardProduct被點擊時，所觸發的函式是`removeProductHandler`。由於需要計算總金額(`totalPrice`)，因此在`ShoppingCart`的一開始會有計算邏輯的部分。
+
+```javascript
+  removeProductHandler = (cardIndex) => {
+    const shopCart = [...this.state.shopCart];
+    shopCart.splice(cardIndex,1);
+    this.setState({shopCart:shopCart});
+  }
+```
+
+#### Nav
+```javascript
+const Nav = (props) => {
+
+    const SearchBoxStyle = {
+        width:'100%',
+        height:'20px',
+        padding:'5px',
+        border:'0px',
+        margin:'0 10px 0 0'
+
+    }
+
+    const cartIconStyle = {
+        maxWidth:'30px'
+    }
+
+    return(
+        <nav className="header">
+            <ul className = "main-nav">
+                <li onClick = { () => props.click(0)}>首頁</li>
+                <li onClick = { () => props.click(1)}>牌組編輯器</li>
+                <li onClick = { () => props.click(0)}>關於本站</li>
+                <form className="search">
+                    <input type='text' name='productName' id='productName' style = {SearchBoxStyle}  />
+                    <input className = "addSearchIcon" type='button' data-action="submit" onClick = {() => props.click(3)}/>
+                </form>
+                <div className = "push" >
+                    <li onClick = { () => props.click(0)}>登入</li>
+                    <li onClick = { () => props.click(2)}><img style = {cartIconStyle} alt = "購物車" src="省略" /></li>
+                </div>
+            </ul>
+        </nav>
+    )
+}
+```
+#### Footer
+```javascript
+const Footer = () => {
+    return(
+        <div className = "footer">
+            <h2>COPYRIGHT © 2021 Malik's Card Game </h2>
+        </div>
+    )
+}
+```
 #### Scroll
+```javascript
+const Scroll = (props) => {
+    const style = {
+        overflowY:'scroll',
+        height: '700px',
+        margin: '10px 50px'
+    }
+
+    return(
+        <div style = {style}>
+            {props.children}
+        </div>
+    )
+};
+```
 #### SearchBox
+```javascript
+const SearchBox = (props) => {
+    return(
+        <input onChange = {props.changed} style = {props.style}/>
+    )
+}
+```
 
 ## Notes
