@@ -62,7 +62,28 @@ const Card = (props) => {
     )
 }
 ```
-第61行的 button 在 onClick 後會執行
+button 在 onClick 後會執行 `deckBuildHandler` 將卡片加入卡組，或是 `removeCardHandler`將卡片移出卡組。
+
+```javascript
+deckBuildHandler = (cardName) => {
+  let anotherDeckList = [...this.state.decklist];
+  const index = this.state.db.findIndex(element => element.name === cardName);
+  let aCard = {...this.state.db[index]};
+  anotherDeckList.push(aCard);
+  this.setState({decklist : anotherDeckList});
+  //console.log(this.state.decklist);
+}
+```
+```javascript
+removeCardHandler = (cardIndex) => {
+  const decklist = [...this.state.decklist];
+  //console.log("before:",decklist);
+  decklist.splice(cardIndex,1);
+  this.setState({decklist:decklist});
+  //console.log("after:",decklist);
+}
+```
+
 - CardProduct
 ```javascript
 const CardProduct = (props) => {
@@ -89,7 +110,8 @@ const CardProduct = (props) => {
     )
 }
 ```
-第86行的 button 在 onClick 後會執行 `addProductHandler`，將商品加入購物車
+button 在 onClick 後會執行 `addProductHandler`，將商品加入購物車。
+
 ```javascript
   addProductHandler = (cardName) => {
     let anotherShopCart = [...this.state.shopCart];
@@ -101,7 +123,119 @@ const CardProduct = (props) => {
   }
 ```
 - CardGallery
+```javascript
+const CardGallery = (props) => {
+
+    
+    let switchPageButton = (
+        <div style = {divStyle}>
+            <button onClick = {()=>props.nextPage(false)}>上一頁</button>
+            <p style = {pStyle}>您目前在第 {props.curPage} 頁</p>
+            <button onClick = {()=>props.nextPage(true)}>下一頁</button>
+        </div>
+    )
+
+    let searchBox = (
+        <div style = {divStyle}>
+            <SearchBox changed = {props.changed}/>
+        </div>
+    )
+
+    if(props.showButton === false){
+        switchPageButton = (
+            <div></div>
+        )
+        searchBox = (
+            <div></div>
+        )
+    }
+
+    return(
+        <div>
+            {searchBox}
+            {switchPageButton}
+            <div className = "CardGallery">
+                { props.cards.map( (aCard , index) => {
+                    return ( <CardProduct 
+                            key = {aCard.id}
+                            src = {aCard.card_images[0].image_url}
+                            name = {aCard.name}
+                            price = {aCard.card_prices[0].amazon_price}
+                            click = {props.click}
+                            add = {true}
+                            />  
+                            )
+                        }
+                    )
+                }
+            </div>
+            {switchPageButton}
+        </div>
+    )
+}
+```
+`CardGallery` 是商城的重要元素，他會管理現在顯示了哪些 `CardProduct` 在商城中。商城有兩種可能的樣貌：有換頁功能或是無換頁功能。這部分由 `state` 的 `showButton` 控制。`CardGallery`在此會傳入的函式包括：1. `switchPageButton` 部分：`nextPageHandler` 2.`CardProduct`部分：`addProductHandler`。
+
+```javascript
+nextPageHandler = (next) => {
+  //console.log(next);
+  const curIndex = (DataBase.length)/5;
+  let curPage = this.state.currentPage;
+  let nextPage = curPage;
+
+  if(next === true){
+    nextPage += 1;
+  }
+  else{
+    nextPage -= 1;
+    curPage -= 2;
+  }
+
+  if((next === true && this.state.currentPage <= 4) || (next === false && this.state.currentPage >1))
+  {
+    this.setState({shop: DataBase.slice(curIndex * curPage , curIndex * nextPage -1)});
+    this.setState({currentPage:nextPage});
+  }
+  else if(this.state.currentPage === 1){
+    alert('您已在第一頁囉！')
+  }
+  else if(this.state.currentPage > 4)
+  {
+    alert('您已在最後一頁囉！')
+  }
+}
+```
+
+`
 - Deck
+```javascript
+const Deck = (props) => {
+    return(
+        <div> 
+            <h2>您的牌組</h2>
+            <div style = {{display:'flex', justifyContent:'center'}}>
+                <p style = {{marginRight:'5px'}}>牌組張數：{props.decklist.length}</p>
+                <button onClick = {props.btnClick}>一鍵清空</button>
+            </div>
+            <div className="Deck" style={props.style}>
+            {props.decklist.map( (aCard , index) => {
+                return ( <Card 
+                        key = {index}
+                        src = {aCard.card_images[0].image_url}
+                        click = {()=> props.click(index)}/>  
+                        )
+                    }
+                )
+            }
+            </div>
+        </div>
+    )
+}
+```
+此元素分兩個部分，第一個 `div` 中顯示現在有多少卡，以及有一個 `button` 按下後會執行 `clearDeckHandler ` 將卡組中的所有卡片清空。第二個 `div` 則會顯示當前卡組有的卡片，其中 `Card` 元素傳入的 `click` 參數是 `removeCardHandler`，因此點擊時就會將該卡移除。
+
+
+
 -
 -
 -
