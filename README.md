@@ -38,18 +38,17 @@
       db : DataBase, /*卡組編輯器使用，儲存所有的卡片資訊*/
       shop: DataBase.slice(0,(DataBase.length)/5-1), /*商城使用，儲存哪些商品會被顯示在商城頁面上*/
       shopCart:[], /*購物車使用，儲存哪些商品會被顯示在購物車頁面上*/
-      showButton: true,
-      searchCardName: '',
-      searchProductName:'',
-      searchPNameFromNav:'',
-      currentPage:1,
-      mode:0
+      showButton: true, /*商城使用，控制換頁的按鈕是否會顯示，預設會顯示，但當商城呈現的是搜尋結果時就改為不顯示*/
+      searchCardName: '', /*卡組編輯器使用，存取使用者輸入的卡片名稱*/
+      searchProductName:'', /*商城使用，存取使用者「在商品頁面搜尋欄」輸入的卡片名稱*/
+      searchPNameFromNav:'', /*商城使用，存取使用者「在 Nav Bar」輸入的卡片名稱*/
+      currentPage:1, /*商城使用，儲存商城現在所在的頁數*/
+      mode:0 /*控制現在畫面應該顯示哪種服務：0為商城,1為卡組編輯器,2為購物車,3為「顯示搜尋結果」的商城*/
   }
 ```
-上方的 state 中，
 
 ### Component
-- Card：最基本的元素，不論是商城功能或是卡組編輯器功能都會使用到它。
+- Card
 ```javascript
 const Card = (props) => {
 
@@ -63,7 +62,8 @@ const Card = (props) => {
     )
 }
 ```
-- CardProduct : 是商城、購物車中會出現的元素。
+第61行的 button 在 onClick 後會執行
+- CardProduct
 ```javascript
 const CardProduct = (props) => {
 
@@ -89,7 +89,18 @@ const CardProduct = (props) => {
     )
 }
 ```
-- CardGallery : 是商城主要顯示
+第86行的 button 在 onClick 後會執行 `addProductHandler`，將商品加入購物車
+```javascript
+  addProductHandler = (cardName) => {
+    let anotherShopCart = [...this.state.shopCart];
+    const index = this.state.shop.findIndex(element => element.name === cardName);
+    let aCard = {...this.state.shop[index]};
+    anotherShopCart.push(aCard);
+    this.setState({shopCart : anotherShopCart});
+    alert('成功加入至購物車');
+  }
+```
+- CardGallery
 - Deck
 -
 -
