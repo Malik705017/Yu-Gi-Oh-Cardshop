@@ -459,5 +459,3 @@ const SearchBox = (props) => {
 ## Notes
 這是我第一個自己做的 React project，一直以來就很想做電商商城這類的網站，在寒假終於有時間做一個簡單版的出來，總計花了5天的時間。
 特別感謝：https://db.ygoprodeck.com/api-guide/ 提供了完整的遊戲王卡片資訊，讓我可以直接拿來使用。
-## Notes了
-## Notes
