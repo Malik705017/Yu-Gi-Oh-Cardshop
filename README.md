@@ -7,8 +7,8 @@
 - [Function 網站功能](#Function)
 - [How to use 如何使用這個網站](#How-to-use)
 - [Structure 網站結構](#Structure)
-  - [Component 程式碼說明]()
-  - [Container 程式碼說明]()
+  - [Container 程式碼說明](##Container)
+  - [Component 程式碼說明](##Component)
 - [Notes 一些心得筆記](#Notes)
 
 ## Function
