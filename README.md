@@ -62,7 +62,7 @@ const Card = (props) => {
     )
 }
 ```
-button 在 onClick 後會執行 `deckBuildHandler` 將卡片加入卡組，或是 `removeCardHandler`將卡片移出卡組。
+`button` 在 `onClick` 後會執行 `deckBuildHandler` 將卡片加入卡組(由上層的`CardDB`元素傳入)，或是 `removeCardHandler`將卡片移出卡組(由上層的`Deck`元素傳入)。
 
 ```javascript
 deckBuildHandler = (cardName) => {
@@ -206,7 +206,36 @@ nextPageHandler = (next) => {
 }
 ```
 
-`
+- CardDB
+```javascript
+const CardDB = (props) => {
+    const db = [...props.db];
+    const click = props.click;
+
+    return (
+        <div> 
+            <h2>卡片資料庫</h2>
+            <SearchBox changed = {props.changed}/>
+            <Scroll>
+                <div className = "CardDB">
+                    { db.map( (aCard , index) => {
+                        return ( <Card 
+                                key = {aCard.id} 
+                                src = {aCard.card_images[0].image_url}
+                                click = {()=> click(aCard.name)}
+                                />  
+                                )
+                            }
+                        )
+                    }
+                </div>
+            </Scroll>
+        </div>
+    )
+}
+```
+此元素顯示有哪些卡片在「資料庫」當中，會傳入`deckBuildHandler`這個函式。當Card元素被點擊時，就會將該卡片加入使用者編輯的卡組中。
+
 - Deck
 ```javascript
 const Deck = (props) => {
@@ -232,15 +261,10 @@ const Deck = (props) => {
     )
 }
 ```
-此元素分兩個部分，第一個 `div` 中顯示現在有多少卡，以及有一個 `button` 按下後會執行 `clearDeckHandler ` 將卡組中的所有卡片清空。第二個 `div` 則會顯示當前卡組有的卡片，其中 `Card` 元素傳入的 `click` 參數是 `removeCardHandler`，因此點擊時就會將該卡移除。
+此元素顯示了現在使用者編輯的卡組內容。元素組成分兩個部分，第一個 `div` 中顯示現在有多少卡，以及有一個 `button` 按下後會執行 `clearDeckHandler ` 將卡組中的所有卡片清空。第二個 `div` 則會顯示當前卡組有的卡片，其中 `Card` 元素傳入的 `click` 參數是 `removeCardHandler`，因此點擊時就會將該卡移除。
 
-
-
--
--
--
--
--
--
+其他元素：
+- Scroll
+- SearchBox
 
 ## Notes
