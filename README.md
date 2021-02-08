@@ -37,7 +37,7 @@
 - Shop Cart : 購物車。先前加入過的商品都會記錄在此，點選移除購物車按鈕就能將商品從購物車刪除。右方小計欄位會**會即時反饋金額加總與商品清單**
 - Deck Builder : 
 ## Structure
-此專案的結構相對單純，僅使用到 1 個 container 和 11 個 component，關係如下：
+此專案的結構相對單純，僅使用到 1 個 container 和 9 個 component，關係如下：
 ![架構圖](https://imgur.com/w37YrJk.png)
  
 ### Container
@@ -379,6 +379,27 @@ const Nav = (props) => {
     )
 }
 ```
+`Nav` 其實就是 Navigation Bar 的意思，props.click 會執行 `switchHandler` 函式，更改 container's state 的 mode。如同我們在 [container](#container)所提到的，mode = 0,1,2分別代表首頁、卡組編輯器、購物車，因此`switchHandler`會幫我們做這些轉換。
+```javascript
+switchHandler = (mode) => {
+    this.setState({mode:mode});
+
+    //一些後續調整
+    if(mode === 0){
+      this.setState({searchProductName:''});
+      this.setState({showButton:true});
+    }
+    else if(mode === 1){
+      this.setState({searchCardName:''});
+    }
+    else if(mode === 3){
+      const productName = document.getElementById("productName").value; //去抓「form 中 input 的值」
+      this.setState({searchPNameFromNav:productName});
+      this.setState({showButton:false});
+    }
+}
+```
+
 #### Footer
 ```javascript
 const Footer = () => {
