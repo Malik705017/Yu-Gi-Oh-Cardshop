@@ -74,7 +74,7 @@ container 運用到了 9 個函式，以下列舉9個函式的功能：
 - nextPageHandler：`CardGallery`中的換頁 button 被點擊時所執行，會將`state`的`currentPage`-1或＋1，並且更新`shop`的內容。
 - addProductHandler：`CardProduct`中的加入購物車button被點擊時所執行，會將`state`的`shopCart`加入點擊的商品
 - removeProductHandler：`CardProduct`中的移除購物車button被點擊時所執行，會將`state`的`shopCart`移除點擊的商品
-- switchHandler：`Nav`中的標籤或搜尋button被點擊時所執行，會將`state`的`mode`切換到對應的服務內容，0為商城,1為卡組編輯器,2為購物車,3為「顯示搜尋結果」的商城。
+- switchHandler：`Nav`中的標籤或搜尋button被點擊時所執行，會將`state`的`mode`切換到對應的服務內容，0為商城，1為卡組編輯器，2為購物車，3為「顯示搜尋結果」的商城。
 
 
 ### Component
