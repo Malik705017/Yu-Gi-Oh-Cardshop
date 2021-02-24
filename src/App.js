@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
+
 import Nav from './Nav/Nav';
 import Footer from './Footer/Footer';
 import Deck from './Deck/Deck';
 import CardDB from './CardDB/CardDB';
 import CardGallery from './CardGallery/CardGallery';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
-import {blackWingsCards} from './CardDB/BlackWing.js';
-import {blueEyesCards} from './CardDB/BlueEyes';
+// import {blackWingsCards} from './CardDB/BlackWing.js';
+// import {blueEyesCards} from './CardDB/BlueEyes';
 import './App.css';
 //import {allCards} from './CardDB/Allcard';
 //import Card from './Card/Card';
 
-let DataBase = [...blueEyesCards];
-DataBase = DataBase.concat(blackWingsCards);
+// let DataBase = [...blueEyesCards];
+// DataBase = DataBase.concat(blackWingsCards);
 
 class App extends Component {
   state = {
       decklist : [],
-      db : DataBase,
-      shop: DataBase.slice(0,(DataBase.length)/5-1),
+      db : [],
+      shop: [],
       shopCart:[],
       showButton: true,
       searchCardName: '',
@@ -28,17 +31,26 @@ class App extends Component {
       mode:0
   }
 
-  // componentDidMount(){
-  //   fetch( "https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes") /*設定使用GET*/
-  //   .then(res => res.json()) 
-  //   .then(result => {
-  //     this.setState({apiData:result.data});/*接到request data後要做的事情*/
-  //     console.log(result.data);
-  //   })
-  //   .catch(e => {
-  //       alert(e);
-  //   })
-  // }
+  componentDidMount(){
+
+      /* 宣告即執行 */
+      (async () => {
+        const response = await axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes');
+        //console.log(response)
+        const data = response.data.data;
+  
+        const response2 = await axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blackwing');
+        const data2 = response2.data.data;
+        //console.log(data2);
+
+        const dbData = data.concat(data2)
+
+        this.setState({
+          db:dbData,
+          shop:dbData.slice(0,(dbData.length)/5-1)
+        })
+      })().catch((err)=>console.log(err))
+  }
 
   /* -------------- 牌組編輯器相關函式 start -------------- */
   deckBuildHandler = (cardName) => {
@@ -78,7 +90,7 @@ class App extends Component {
   // 處理商城換頁的函式
   nextPageHandler = (next) => {
     //console.log(next);
-    const curIndex = (DataBase.length)/5;
+    const curIndex = (this.state.db.length)/5;
     let curPage = this.state.currentPage;
     let nextPage = curPage;
 
@@ -92,7 +104,7 @@ class App extends Component {
 
     if((next === true && this.state.currentPage <= 4) || (next === false && this.state.currentPage >1))
     {
-      this.setState({shop: DataBase.slice(curIndex * curPage , curIndex * nextPage -1)});
+      this.setState({shop: this.state.db.slice(curIndex * curPage , curIndex * nextPage -1)});
       this.setState({currentPage:nextPage});
     }
     else if(this.state.currentPage === 1){

@@ -49,7 +49,7 @@ const ShoppingCart = (props) => {
                 <div>
                 { props.cards.map( (aCard,index) => {
                     return( 
-                            <div className = "ListItem">
+                            <div className = "ListItem" key = {aCard.id}>
                                 <p>{index+1}.</p>
                                 <p>{aCard.name}</p>
                                 <p className = "itemPrice">{aCard.card_prices[0].amazon_price}</p>
