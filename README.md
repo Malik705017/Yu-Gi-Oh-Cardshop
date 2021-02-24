@@ -4,6 +4,7 @@
 ![展示頁](https://imgur.com/jnR7AZO.png)
 
 ## Table of content
+- [Version Update 版本更新](#Version-update)
 - [Function 網站功能](#Function)
 - [How to use 如何使用這個網站](#How-to-use)
 - [Structure 網站結構](#Structure)
@@ -29,6 +30,10 @@
     - [Scroll](#Scroll)
     - [SearchBox](#SearchBox)
 - [Notes 一些心得筆記](#Notes)
+
+## Version 
+- v1.1 (2021/2/6)
+- v1.2 取代原先將資料下載到本地端的方法，改使用 axios 套件實作 get API 的方法取得資料。並修改部分 bug 以提升效能。（2021/2/24）
 
 ## Function
 本專案實作了兩個大功能，分別是卡組編輯器、卡片商城（包含：商品頁面與購物車）。
