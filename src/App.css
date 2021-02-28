@@ -37,25 +37,6 @@ body{
     color:  rgb(40,103,178);
 }
 
-.block {
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
-}
-
-/* .Deck{
-  width: 550px;
-  display:flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
-  margin: 10px 50px;
-  background-image:url(https://1.bp.blogspot.com/-OQYDrRTYcxY/Xq-LQBhY9_I/AAAAAAAABbs/x5SCP5fSLHk3q_iPablUztFjEn8OEHJBwCK4BGAsYHg/s320/deckbox.jpg);
-	background-position: center;
-} */
-
-
 .CardShop{
   background-color: rgb(255, 255, 255);
   margin: auto;
