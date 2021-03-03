@@ -3,6 +3,8 @@
    
 const CardShopApp = (props) => { 
 
+    console.log('CardShopApp')
+    
     /*當商品展示區沒有符合條件的商品時，顯示「找不到符合挑件的商品」*/
     let product = (
         <div>

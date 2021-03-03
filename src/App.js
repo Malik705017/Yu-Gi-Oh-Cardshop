@@ -42,6 +42,9 @@ class App extends Component {
           db:dbData,
           shop:dbData.slice(0,(dbData.length)/5-1)
         })
+
+        console.log('componentDidMount')
+
       })().catch((err)=>console.log(err))
   }
 
@@ -73,8 +76,6 @@ class App extends Component {
       this.setState({searchCardName:event.target.value});
   }
   
-
-
   /* 商城相關函式 */
 
   //處理商城搜尋商品的函式
@@ -154,6 +155,8 @@ class App extends Component {
 
   render() {
 
+    console.log('render');
+
     // 牌組編輯器
     const DeckBuilderApp = (
       <DeckBuilder 
@@ -193,7 +196,9 @@ class App extends Component {
         removeClick = {this.removeProductHandler}
       />
     )
-    
+
+    // 註冊與登入頁面
+    const RegisterForm
     
     // 儲存全部頁面的陣列
     const Router = [CardShopApp,DeckBuilderApp,ShopCartApp,CardShopApp];

@@ -6,6 +6,8 @@ import DeckStyle from './DeckBuilderApp.css'
 
 const DeckBuilder = (props) => {
 
+    console.log('DeckBuilder')
+    
     const searchCardList = props.database.filter( (aCard) => {
         return aCard.name.toLowerCase().includes(props.searchCardName.toLowerCase());
     })
