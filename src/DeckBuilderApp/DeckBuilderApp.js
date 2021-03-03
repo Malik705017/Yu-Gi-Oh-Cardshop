@@ -12,10 +12,10 @@ const DeckBuilder = (props) => {
         return aCard.name.toLowerCase().includes(props.searchCardName.toLowerCase());
     })
 
-    /*當牌組張數超過20張後就不再有固定長度 */
-    if(props.deckList.length > 20){
-        delete DeckStyle.Deck.height;
-    }
+    // /*當牌組張數超過20張後就不再有固定長度 */
+    // if(props.deckList.length > 20){
+    //     delete DeckStyle.Deck.height;
+    // }
 
     return (
         <div>
