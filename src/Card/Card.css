@@ -1,4 +1,9 @@
 img{
-    width: 100px;
+    width: 80px;
     padding:5px;
+}
+
+.loader{
+    background: transparent url('https://i.imgur.com/nVYdovc.gif') no-repeat;
+    background-position: center; 
 }
