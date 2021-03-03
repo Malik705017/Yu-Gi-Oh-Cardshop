@@ -3,6 +3,9 @@
 
 ![展示頁](https://imgur.com/jnR7AZO.png)
 
+## Demo
+本專案部署在 Heroku 上，請點選此[連結](https://malik-card-game.herokuapp.com/)
+
 ## Table of content
 - [Version Update 版本更新](#Version)
 - [Function 網站功能](#Function)
