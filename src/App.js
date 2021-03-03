@@ -198,7 +198,7 @@ class App extends Component {
     )
 
     // 註冊與登入頁面
-    const RegisterForm
+    // const RegisterForm
     
     // 儲存全部頁面的陣列
     const Router = [CardShopApp,DeckBuilderApp,ShopCartApp,CardShopApp];
