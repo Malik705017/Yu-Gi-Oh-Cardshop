@@ -2,6 +2,10 @@
   "name": "deckmaker",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.15.5",
+    "npm": "7.6.0"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "babel-plugin-react-css-modules": "^5.2.6",
