@@ -1,10 +1,10 @@
 # Side Project  - 遊戲王卡購物網站
 這是我在上了 Udemy 的 React 課程 [React - the complete guide](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) 的前五章節後，以 React 為前端框架寫的簡易版購物網站，這份文件將會涵蓋以下內容，對自己的學習做點紀錄之餘，也能讓大家了解如何使用這個專案。
 
-![展示頁](https://imgur.com/jnR7AZO.png)
+![展示頁](https://i.imgur.com/eviJUT4.png)
 
-## Demo
-本專案部署在 Heroku 上，請點選此[連結](https://malik-card-game.herokuapp.com/)
+## Demo 
+本專案部署在 Heroku 上，請點選此 [連結](https://malik-card-game.herokuapp.com/)
 
 ## Table of content
 - [Version Update 版本更新](#Version)
@@ -39,6 +39,7 @@
 - v1.1 取代原先將資料下載到本地端的方法，改使用 axios 套件實作 get API 的方法取得資料。並修改部分 bug 以提升效能。（2021/2/24）
 - v1.2 修改原先專案架構，新增三個 component: DeckBuilderApp, ShoppingCartApp, CardShopApp 以減少 App.js render() 中的 code 行數。（2021/2/28）
 - v1.3 修改網頁為響應式網頁，並改善第一次資料載入期間（fetching data）的畫面顯示（增加 loading.gif）。（2021/3/5）
+  - v1.3.1 修改商品欄位配色、優化 layout
 
 ## Function
 本專案實作了兩個大功能，分別是卡組編輯器、卡片商城（包含：商品頁面與購物車）。
