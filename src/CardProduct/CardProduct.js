@@ -17,8 +17,8 @@ const CardProduct = (props) => {
             <Card src = {props.src} click = {()=>console.log('click')}/>
             <div className = "CardInfo">
                 <div className = "BasicInfo">
-                    <p>{props.name}</p>
-                    <p>USD： {props.price}</p>
+                    <p class = "name">{props.name}</p>
+                    <p class = "price">USD： {props.price}</p>
                 </div>
                 <button onClick = { () => {props.click(clickFuncInput)}}>{text}<img className = "cartIcon" alt="購物車" src = "https://i.imgur.com/NAwHDGt.png"/></button>
             </div>

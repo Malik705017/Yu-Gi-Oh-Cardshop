@@ -14,6 +14,19 @@
     width: 63%;
 }
 
+.BasicInfo{
+    height: 100px;
+}
+
+.name{
+    height: 50px;
+    margin: 20px 0 0 0;
+}
+
+.price{
+    height: 10px;
+}
+
 .BasicInfo > p{
     font-size: 14px;
     color: rgb(40,103,178);
@@ -27,7 +40,6 @@
     border: 0px;
     border-radius: 4px;
     background-color: #f5f5f5;
-    margin-top: 10px;
     cursor: pointer;
 
     /*讓button內的文字與圖片可並排顯示*/
@@ -47,7 +59,7 @@
     width: 14px;
 }
 
-@media (max-width:500px){
+@media (max-width:700px){
     .CardProduct{
         display: block;
         width:120px;
@@ -57,6 +69,16 @@
     }
     .CardInfo > button{
         width: 90%;
+    }
+    .BasicInfo{
+        height: 75px;
+    }
+    .BasicInfo > .name{
+        height: 20px;
+        margin: 0;
+    }
+    .BasicInfo > .price{
+        margin: 35px 0 10px 0;
     }
     .BasicInfo > p{
         font-size: 10px;
