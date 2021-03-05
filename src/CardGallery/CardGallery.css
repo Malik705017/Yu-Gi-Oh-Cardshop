@@ -6,3 +6,9 @@
     margin: 50px;
     color: whitesmoke;
 }
+
+@media (max-width:400px){
+    .CardGallery{
+        margin: 0px;
+    }
+}

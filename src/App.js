@@ -4,6 +4,7 @@ import axios from 'axios';
 import Nav from './Nav/Nav';
 import Footer from './Footer/Footer';
 
+import Loading from './LoadingApp/LoadingApp';
 import DeckBuilder from './DeckBuilderApp/DeckBuilderApp'
 import CardShop from './CardShopApp/CardShopApp'
 import Cart from './ShoppingCartApp/ShoppingCartApp';
@@ -21,7 +22,7 @@ class App extends Component {
       searchProductName:'',
       searchPNameFromNav:'',
       currentPage:1,
-      mode:0
+      mode:4
   }
 
   componentDidMount(){
@@ -38,10 +39,12 @@ class App extends Component {
 
         const dbData = data.concat(data2)
 
-        this.setState({
+        setTimeout(()=>{this.setState({
           db:dbData,
-          shop:dbData.slice(0,(dbData.length)/5-1)
-        })
+          shop:dbData.slice(0,(dbData.length)/5-1),
+          mode: 0
+        })},"1000")
+        
 
         console.log('componentDidMount')
 
@@ -157,6 +160,12 @@ class App extends Component {
 
     console.log('render');
 
+
+    // 第一次載入
+    const LoadingApp = (
+      <Loading/>
+    )
+
     // 牌組編輯器
     const DeckBuilderApp = (
       <DeckBuilder 
@@ -201,7 +210,7 @@ class App extends Component {
     // const RegisterForm
     
     // 儲存全部頁面的陣列
-    const Router = [CardShopApp,DeckBuilderApp,ShopCartApp,CardShopApp];
+    const Router = [CardShopApp,DeckBuilderApp,ShopCartApp,CardShopApp,LoadingApp];
 
     return (
       <div className="App">

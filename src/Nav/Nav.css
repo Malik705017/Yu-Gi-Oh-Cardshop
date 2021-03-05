@@ -11,13 +11,14 @@
     align-items: center;
     list-style:none;
     font-size:1em;
+    padding: 0 0 0 10px;
     /*margin:0;*/
 }
 .push{
     display:flex;
     align-items: center;
     margin-left: auto;
-    margin-right: 50px;
+    margin-right: 30px;
 }
 .main-nav li{
     padding: 0 20px; /*讓每個li有間隔距離*/
@@ -37,6 +38,10 @@
     margin: 0px 0px 0px 2%;
 }
 
+#bars{
+    display: none;
+}
+
 #productName{
     width: 80%;
 }
@@ -51,4 +56,33 @@
     height: 30px;           /* make this the size of your image */
     width: 30px;
     border-radius: 4px;
+}
+
+
+@media (max-width: 1200px){
+    .search{
+        width: 80%;
+    }
+    .lap-li{
+        display: none;
+    }
+    #bars{
+        display: inline;
+    }
+}
+
+@media (max-width: 500px){
+    .main-nav li{
+        padding:10px;
+    }
+    .push{
+        margin-left: 0px; 
+        margin-right: 0px;
+    }
+    .header{
+        height: 10%;
+    }
+    .main-nav{
+        height: 50%;
+    }
 }

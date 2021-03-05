@@ -17,6 +17,7 @@ body{
   flex-direction: column;
 }
 
+
 .Logo{
   display: flex;
   align-items: center;
@@ -76,4 +77,27 @@ button{
   width: 100px;
   margin: 0 10px 0 0;
   border-radius: 50%;
+}
+
+
+@media (max-width:500px){
+  .Logo {
+    display:block;
+  }
+  .Header{
+    margin-top:100px;
+  }
+  #title{
+    font-size: 30px;
+  }
+  #slogan{
+    font-size: 20px;
+  }
+  .footer{
+    margin-top: 100px;
+    height: 100px;
+  }
+  .footer h2{
+    font-size: 12px;
+  }
 }

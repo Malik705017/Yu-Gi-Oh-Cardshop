@@ -16,7 +16,7 @@ const CardShopApp = (props) => {
         </div>
       )
   
-      let searchCardGallery = null;
+      let searchCardGallery = [];
       if(props.mode === 3) // 從Nav搜尋
       { 
         searchCardGallery = props.database.filter( (aCard) => {

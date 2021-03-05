@@ -10,7 +10,7 @@ const Card = (props) => {
         cursor: 'pointer',
     };
     return(
-        <div class = "loader">
+        <div className = "loader">
             <img alt = "yu-gi-oh card" src = {props.src} onClick = {props.click} style={style}/>  
         </div>
     )
