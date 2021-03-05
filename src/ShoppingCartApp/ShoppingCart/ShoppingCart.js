@@ -49,8 +49,7 @@ const ShoppingCart = (props) => {
                     return( 
                             <div className = "ListItem" key = {aCard.id}>
                                 <p>{index+1}.</p>
-                                <p>{aCard.name}</p>
-                                <p className = "itemPrice">{aCard.card_prices[0].amazon_price}</p>
+                                <p>{aCard.name} {aCard.card_prices[0].amazon_price}</p>
                             </div>
                         )
                         }

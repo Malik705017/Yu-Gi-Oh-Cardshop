@@ -7,7 +7,8 @@ import './CardGallery.css';
 const divStyle = {
     display:"flex", 
     justifyContent: "center",
-    margin:"15px 0"
+    margin:"15px 0",
+    color:'rgb(40,103,178)'
 }
 
 const pStyle = {
@@ -30,6 +31,7 @@ const CardGallery = (props) => {
 
     let searchBox = (
         <div style = {divStyle}>
+            <p style = {pStyle}>找商品</p>
             <SearchBox changed = {props.changed}/>
         </div>
     )
@@ -46,7 +48,6 @@ const CardGallery = (props) => {
     return(
         <div>
             {searchBox}
-            {switchPageButton}
             <div className = "CardGallery">
                 { props.cards.map( (aCard , index) => {
                     return ( <CardProduct 

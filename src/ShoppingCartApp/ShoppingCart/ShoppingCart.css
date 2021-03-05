@@ -32,16 +32,10 @@
     align-items: center;
     font-size: 8px;
     padding-left: 10px;
-    position: relative;
 }
 
 .ListItem > p{
     padding: 2px;
-}
-
-.itemPrice{
-    position: absolute;
-    right: 5px;
 }
 
 
