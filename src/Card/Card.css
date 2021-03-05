@@ -1,4 +1,4 @@
-img{
+.card{
     width: 100px;
     padding:5px;
 }
@@ -6,9 +6,13 @@ img{
 .loader{
     background: transparent url('https://i.imgur.com/nVYdovc.gif') no-repeat;
     background-position: center; 
+    height: 155px;
 }
 
 @media(max-width:500px){
+    .loader{
+        height: 130px;
+    }
     .card{
         width: 80px;
     }
