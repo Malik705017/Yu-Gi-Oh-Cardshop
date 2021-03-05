@@ -3,12 +3,12 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 15px;
     justify-items: center;
-    margin: 50px;
     color: whitesmoke;
 }
 
-@media (max-width:400px){
+@media (max-width:500px){
     .CardGallery{
-        margin: 0px;
+        margin: 15px 0px;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
 }

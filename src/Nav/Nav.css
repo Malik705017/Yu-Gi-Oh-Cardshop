@@ -59,7 +59,7 @@
 }
 
 
-@media (max-width: 1200px){
+@media (max-width: 1024px){
     .search{
         width: 80%;
     }

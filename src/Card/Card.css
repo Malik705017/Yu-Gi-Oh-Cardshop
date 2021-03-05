@@ -1,9 +1,15 @@
 img{
-    width: 80px;
+    width: 100px;
     padding:5px;
 }
 
 .loader{
     background: transparent url('https://i.imgur.com/nVYdovc.gif') no-repeat;
     background-position: center; 
+}
+
+@media(max-width:500px){
+    .card{
+        width: 80px;
+    }
 }

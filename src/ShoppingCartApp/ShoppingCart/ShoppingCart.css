@@ -44,3 +44,17 @@
     right: 5px;
 }
 
+
+@media (max-width:500px){
+    .W-70{
+        width: 50%;
+    }
+    .CartList{
+        right:1%;
+        width: 49%;
+        margin: 15px;
+    }
+    .ListItem{
+        font-size: 1px
+    }
+}

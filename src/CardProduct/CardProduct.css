@@ -3,8 +3,6 @@
     display: flex;
     padding: 10px 5px;
     width:280px;
-    background-color: rgb(40,103,178);
-    border-radius: 10px;
 }
 
 .CardInfo {
@@ -16,8 +14,9 @@
     width: 63%;
 }
 
-.CardInfo > p{
-    font-size: 12px;
+.BasicInfo > p{
+    font-size: 14px;
+    color: rgb(40,103,178);
 }
 
 
@@ -48,4 +47,19 @@
     width: 14px;
 }
 
+@media (max-width:500px){
+    .CardProduct{
+        display: block;
+        width:120px;
+    }
+    .CardInfo{
+        width:100%;
+    }
+    .CardInfo > button{
+        width: 90%;
+    }
+    .BasicInfo > p{
+        font-size: 1px;
+    }
+}
 
