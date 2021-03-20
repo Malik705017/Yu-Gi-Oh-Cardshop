@@ -1,6 +1,6 @@
 import React from 'react';
 import CardProduct from '../CardProduct/CardProduct';
-import SearchBox from '../SearchBox/SearchBox';
+import SearchBox from '../Common/SearchBox/SearchBox';
 import './CardGallery.css';
 
 

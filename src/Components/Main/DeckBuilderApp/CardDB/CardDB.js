@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchBox from '../../SearchBox/SearchBox';
-import Scroll from '../../Scroll/Scroll';
-import Card from '../../Card/Card';
+import SearchBox from '../../../Common/SearchBox/SearchBox';
+import Scroll from '../../../Common/Scroll/Scroll';
+import Card from '../../../Card/Card';
 import './CardDB.css'
 
 const CardDB = (props) => {

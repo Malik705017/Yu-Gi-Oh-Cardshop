@@ -1,6 +1,6 @@
 import React from 'react';
-import CardProduct from '../../CardProduct/CardProduct';
-import '../../CardGallery/CardGallery.css';
+import CardProduct from '../../../CardProduct/CardProduct';
+import '../../../CardGallery/CardGallery.css';
 import './ShoppingCart.css';
 
 const ShoppingCart = (props) => {

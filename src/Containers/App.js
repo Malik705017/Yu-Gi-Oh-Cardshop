@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Nav from '../Components/Nav/Nav';
-import Footer from '../Components/Footer/Footer';
-import Loading from '../Components/LoadingApp/LoadingApp';
-import DeckBuilder from '../Components/DeckBuilderApp/DeckBuilderApp'
-import CardShop from '../Components/CardShopApp/CardShopApp'
-import Cart from '../Components/ShoppingCartApp/ShoppingCartApp';
+import Nav from '../Components/Common/Nav/Nav';
+import Footer from '../Components/Common/Footer/Footer';
+import Loading from '../Components/Main/LoadingApp/LoadingApp';
+import DeckBuilder from '../Components/Main/DeckBuilderApp/DeckBuilderApp'
+import CardShop from '../Components/Main/CardShopApp/CardShopApp'
+import Cart from '../Components/Main/ShoppingCartApp/ShoppingCartApp';
 
 import './App.css';
 
