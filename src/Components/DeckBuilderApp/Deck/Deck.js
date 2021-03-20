@@ -1,9 +1,10 @@
 import React from 'react';
 import Card from '../../Card/Card';
+import './Deck.css'
 
 const Deck = (props) => {
     return(
-        <div> 
+        <div className = "Deck-Wrapper"> 
             <h2>您的牌組</h2>
             <div style = {{display:'flex', justifyContent:'center'}}>
                 <p style = {{marginRight:'5px'}}>牌組張數：{props.decklist.length}</p>

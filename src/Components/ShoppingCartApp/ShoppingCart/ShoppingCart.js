@@ -26,7 +26,7 @@ const ShoppingCart = (props) => {
 
     return(
         <div className = "ShoppingCart">
-            <div className = "CardGallery W-70">
+            <div className = "CardGallery W-left">
                 { props.cards.map( (aCard,index) => {
                     return ( <CardProduct 
                                 key = {aCard.id}

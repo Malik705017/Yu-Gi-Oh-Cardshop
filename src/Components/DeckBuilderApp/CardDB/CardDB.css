@@ -1,0 +1,19 @@
+.CardDB-Wrapper {
+    width: 570px;
+    margin: 0 1%;
+}
+
+.CardDB{
+    width: 100%;
+    display:flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    background-image:url(https://1.bp.blogspot.com/-OQYDrRTYcxY/Xq-LQBhY9_I/AAAAAAAABbs/x5SCP5fSLHk3q_iPablUztFjEn8OEHJBwCK4BGAsYHg/s320/deckbox.jpg);
+      background-position: center;
+  }
+
+@media (max-width:700px) {
+    .Deck-Wrapper {
+        width: 360px;
+    }
+}

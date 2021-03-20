@@ -1,11 +1,13 @@
 .ShoppingCart{
     display: flex;
-
+    margin: 0 auto;
+    padding: 25px;
 }
 
 /*元素的70% 20%是根據整個瀏覽器頁面而非一個區塊*/
-.W-70{
+.W-left{
     width: 70%;
+    border-radius: 10px;
 }
 
 /*結帳清單*/
@@ -30,7 +32,7 @@
 .ListItem{
     display: flex;
     align-items: center;
-    font-size: 8px;
+    font-size: 1rem;
     padding-left: 10px;
 }
 
@@ -40,15 +42,18 @@
 
 
 @media (max-width:500px){
-    .W-70{
-        width: 50%;
+    .ShoppingCart{
+        padding: 0px;
+    }
+    .W-left{
+        width: 45%;
     }
     .CartList{
-        right:1%;
-        width: 49%;
+        right: 1%;
+        width: 44%;
         margin: 15px;
     }
     .ListItem{
-        font-size: 1px
+        font-size: 5px;
     }
 }

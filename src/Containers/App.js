@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
-import Nav from './Nav/Nav';
-import Footer from './Footer/Footer';
-
-import Loading from './LoadingApp/LoadingApp';
-import DeckBuilder from './DeckBuilderApp/DeckBuilderApp'
-import CardShop from './CardShopApp/CardShopApp'
-import Cart from './ShoppingCartApp/ShoppingCartApp';
+import Nav from '../Components/Nav/Nav';
+import Footer from '../Components/Footer/Footer';
+import Loading from '../Components/LoadingApp/LoadingApp';
+import DeckBuilder from '../Components/DeckBuilderApp/DeckBuilderApp'
+import CardShop from '../Components/CardShopApp/CardShopApp'
+import Cart from '../Components/ShoppingCartApp/ShoppingCartApp';
 
 import './App.css';
 
@@ -173,7 +171,7 @@ class App extends Component {
         database = {this.state.db}
         deckList = {this.state.decklist}
         removeClick = {this.removeCardHandler}
-        btnClick = {this.clearDeckHandler}
+        clearClick = {this.clearDeckHandler}
         cardList = {this.searchCardList}
         addClick = {this.deckBuildHandler}
         searchChange = {this.searchCardChangeHandler}

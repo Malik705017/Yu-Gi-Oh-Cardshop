@@ -2,13 +2,14 @@ import React from 'react';
 import SearchBox from '../../SearchBox/SearchBox';
 import Scroll from '../../Scroll/Scroll';
 import Card from '../../Card/Card';
+import './CardDB.css'
 
 const CardDB = (props) => {
     const db = [...props.db];
     const click = props.click;
 
     return (
-        <div> 
+        <div className = "CardDB-Wrapper"> 
             <h2>卡片資料庫</h2>
             <SearchBox changed = {props.changed}/>
             <Scroll>

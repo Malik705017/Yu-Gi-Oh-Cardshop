@@ -1,8 +1,6 @@
 import React from 'react'
 import ShoppingCart from './ShoppingCart/ShoppingCart'
 
-
-
 // 當購物車為空時就要讓購物車頁面顯示「您的購物車目前沒有商品」
 // img用div包住是因為要讓整個水平面只有單一元素，否則會跟button並排
 // button按下去後會返回到商場首頁
