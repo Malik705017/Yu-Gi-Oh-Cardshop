@@ -8,13 +8,24 @@
     background: transparent url('https://i.imgur.com/nVYdovc.gif') no-repeat;
     background-position: center; 
     height: 155px;
+    display: flex;
+    justify-content: center;
+}
+
+.hasLoad {
+    height: 155px;
+    display: flex;
+    justify-content: center;
 }
 
 @media(max-width:500px){
     .loader{
-        height: 130px;
+        height: 100px;
+    }
+    .hasLoad {
+        height: 100px;
     }
     .card{
-        width: 80px;
+        width: 60px;
     }
 }

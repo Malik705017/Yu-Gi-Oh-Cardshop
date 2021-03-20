@@ -3,3 +3,8 @@
     background-position: center; 
     height: 50px;
 }
+
+.loadText{
+    color: rgb(40,103,178);
+    text-align: center;
+}

@@ -40,6 +40,8 @@
 - v1.2 修改原先專案架構，新增三個 component: DeckBuilderApp, ShoppingCartApp, CardShopApp 以減少 App.js render() 中的 code 行數。（2021/2/28）
 - v1.3 修改網頁為響應式網頁，並改善第一次資料載入期間（fetching data）的畫面顯示（增加 loading.gif）。（2021/3/5）
   - v1.3.1 修改商品欄位配色、優化 layout
+  - v1.3.2 將 CSS 改為 CSS module，並對專案結構做調整。 (2021/3/20)
+  - v1.3.3 新增 side drawer 並讓圖片 loading 完後能將 gif 移除。(2021/3/20)
 
 ## Function
 本專案實作了兩個大功能，分別是卡組編輯器、卡片商城（包含：商品頁面與購物車）。

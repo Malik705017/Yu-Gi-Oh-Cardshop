@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Nav from '../Components/Common/Nav/Nav';
-import Footer from '../Components/Common/Footer/Footer';
+import Layout from './Layout'
 import Loading from '../Components/Main/LoadingApp/LoadingApp';
 import DeckBuilder from '../Components/Main/DeckBuilderApp/DeckBuilderApp'
 import CardShop from '../Components/Main/CardShopApp/CardShopApp'
 import Cart from '../Components/Main/ShoppingCartApp/ShoppingCartApp';
-import appClass from './App.css';
 
 class App extends Component {
   state = {
@@ -135,6 +133,8 @@ class App extends Component {
 
   /* 處理頁面顯示的函式 */
   
+
+
   switchHandler = (mode) => {
       this.setState({mode:mode});
       
@@ -210,11 +210,9 @@ class App extends Component {
     const Router = [CardShopApp,DeckBuilderApp,ShopCartApp,CardShopApp,LoadingApp];
 
     return (
-      <div className = {appClass.App}>
-        <Nav click = {this.switchHandler} changed = {this.searchProductChangeHandler}/>
-          {Router[this.state.mode]}
-        <Footer/>
-      </div>
+        <Layout switch = {this.switchHandler} search = {this.searchProductChangeHandler}>
+            {Router[this.state.mode]}
+        </Layout>
     );
 
   }

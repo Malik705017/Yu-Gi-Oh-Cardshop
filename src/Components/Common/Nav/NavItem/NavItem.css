@@ -1,0 +1,22 @@
+li {
+    list-style: none;
+}
+
+.sideLi {
+    display: block;
+    padding: 10px;
+    text-align: center;
+}
+
+#bars{
+    display: none;
+}
+
+@media (max-width: 1024px){
+    .displayLi {
+        display: none;
+    }
+    #bars{
+        display: inline;
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import ShoppingCart from './ShoppingCart/ShoppingCart'
+import shoppingCartAppClass from './ShoppingCartApp.css'
 import classes from '../../../Containers/App.css'
 // 當購物車為空時就要讓購物車頁面顯示「您的購物車目前沒有商品」
 // img用div包住是因為要讓整個水平面只有單一元素，否則會跟button並排
@@ -8,7 +9,7 @@ import classes from '../../../Containers/App.css'
 const ShoppingCartContainer = (props) => {
 
     let shopping = (
-        <div>
+        <div className = {shoppingCartAppClass.center}>
             <h3>您的購物車目前沒有商品唷</h3>
             <div>
                 <img style = {{maxWidth:"100px",marginBottom:"10px"}} 
@@ -22,7 +23,9 @@ const ShoppingCartContainer = (props) => {
         shopping = (
             <div>
                 <ShoppingCart cards = {props.shopCart} click = {props.removeClick}/>
-                <button onClick = {props.switchHandler}>繼續選購</button>
+                <div className = {shoppingCartAppClass.center}>
+                    <button onClick = {props.switchHandler}>繼續選購</button>
+                </div>
             </div>
         )
     }
@@ -32,9 +35,7 @@ const ShoppingCartContainer = (props) => {
             <div className = {classes.Header}>
                 <h1 id = {classes.title}>您的購物車</h1>
             </div>
-            <div>
-                {shopping}
-            </div>
+            {shopping}
         </div>
     )
 }

@@ -1,0 +1,9 @@
+.center{
+    display: flex;
+    justify-content: center;
+}
+#logoImg{
+    width: 100px;
+    border-radius: 50%;
+}
+

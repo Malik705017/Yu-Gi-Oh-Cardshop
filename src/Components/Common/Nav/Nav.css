@@ -38,10 +38,6 @@
     margin: 0px 0px 0px 2%;
 }
 
-#bars{
-    display: none;
-}
-
 #productName{
     width: 80%;
 }
@@ -62,12 +58,7 @@
 @media (max-width: 1024px){
     .search{
         width: 80%;
-    }
-    .lapLi{
-        display: none;
-    }
-    #bars{
-        display: inline;
+        padding: 0;
     }
 }
 
@@ -82,7 +73,7 @@
     .header{
         height: 10%;
     }
-    .main-nav{
+    .mainNav{
         height: 50%;
     }
 }
