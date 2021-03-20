@@ -2,7 +2,8 @@ import React from 'react'
 import Deck from './Deck/Deck'
 import CardDB from './CardDB/CardDB'
 
-import DeckStyle from './DeckBuilderApp.css'
+import appClass from '../../../Containers/App.css'
+import deckBuilderClass from './DeckBuilderApp.css'
 
 const DeckBuilder = (props) => {
 
@@ -19,13 +20,12 @@ const DeckBuilder = (props) => {
 
     return (
         <div>
-            <div className = "Header">
-                <h1 id="title">遊戲王卡組編輯器</h1>
+            <div className = {appClass.Header}>
+                <h1 id = {appClass.title}>遊戲王卡組編輯器</h1>
             </div>
-            <div className = "DeckBuilder">
+            <div className = {deckBuilderClass.DeckBuilder}>
                 <Deck decklist = {props.deckList} 
                         click = {props.removeClick} 
-                        style = {DeckStyle.Deck} 
                         btnClick = {props.clearClick}/>
                 <CardDB db = {searchCardList} 
                         click = {props.addClick} 

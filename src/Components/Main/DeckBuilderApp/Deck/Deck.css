@@ -1,4 +1,4 @@
-.Deck-Wrapper {
+.Wrapper {
     width: 570px;
     margin: 0 1%;
 }
@@ -16,7 +16,7 @@
 
 
 @media (max-width:700px) {
-    .Deck-Wrapper {
+    .Wrapper {
         width: 360px;
     }
 }

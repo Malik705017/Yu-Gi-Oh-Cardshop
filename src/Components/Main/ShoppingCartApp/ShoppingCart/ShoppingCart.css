@@ -5,7 +5,7 @@
 }
 
 /*元素的70% 20%是根據整個瀏覽器頁面而非一個區塊*/
-.W-left{
+.wLeft{
     width: 70%;
     border-radius: 10px;
 }
@@ -45,7 +45,7 @@
     .ShoppingCart{
         padding: 0px;
     }
-    .W-left{
+    .wLeft{
         width: 45%;
         margin: 10px;
     }

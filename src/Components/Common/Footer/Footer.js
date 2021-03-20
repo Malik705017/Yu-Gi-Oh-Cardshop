@@ -1,10 +1,10 @@
 import React from 'react';
-import './Footer.css';
+import footerClass from './Footer.css';
 
 
 const Footer = () => {
     return(
-        <div className = "footer">
+        <div className = {footerClass.footer}>
             <h2>COPYRIGHT © 2021 Malik's Card Game </h2>
         </div>
     )

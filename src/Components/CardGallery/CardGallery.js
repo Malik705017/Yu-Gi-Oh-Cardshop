@@ -1,7 +1,7 @@
 import React from 'react';
 import CardProduct from '../CardProduct/CardProduct';
 import SearchBox from '../Common/SearchBox/SearchBox';
-import './CardGallery.css';
+import cardGalleryClass from './CardGallery.css';
 
 
 const divStyle = {
@@ -20,7 +20,6 @@ const pStyle = {
 
 const CardGallery = (props) => {
 
-    
     let switchPageButton = (
         <div style = {divStyle}>
             <button onClick = {()=>props.nextPage(false)}>上一頁</button>
@@ -48,7 +47,7 @@ const CardGallery = (props) => {
     return(
         <div>
             {searchBox}
-            <div className = "CardGallery">
+            <div className = {cardGalleryClass.CardGallery}>
                 { props.cards.map( (aCard , index) => {
                     return ( <CardProduct 
                             key = {aCard.id}

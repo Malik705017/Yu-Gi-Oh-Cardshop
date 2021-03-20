@@ -1,6 +1,8 @@
- import React from 'react'
- import CardGallery from '../../CardGallery/CardGallery'  
-   
+import React from 'react'
+import CardGallery from '../../CardGallery/CardGallery'  
+import appClass from '../../../Containers/App.css'   
+
+
 const CardShopApp = (props) => { 
 
     console.log('CardShopApp')
@@ -45,19 +47,19 @@ const CardShopApp = (props) => {
   
       //網站標題
       let Header = (
-        <div className = "Header">
-          <div className = "Logo">
-            <img id = "logoImg" alt = "logo" src = "https://imgur.com/c37t0NS.png"/>
-            <h1 id = "title">Malik's卡片商城</h1>
+        <div className = {appClass.Header}>
+          <div className = {appClass.Logo}>
+            <img id = {appClass.logoImg} alt = "logo" src = "https://imgur.com/c37t0NS.png"/>
+            <h1 id = {appClass.title}>Malik's卡片商城</h1>
           </div>
-          <h1 id = "slogan">花得更少，買得更好</h1>
+          <h1 id = {appClass.slogan}>花得更少，買得更好</h1>
         </div>
       )
       
       if(props.mode === 3) //表示為從Nav搜尋商品
       {
           Header = (
-            <div className = "Header">
+            <div className = {appClass.Header}>
               <p>搜尋 {props.searchNav} 的結果如下，共 {searchCardGallery.length} 筆符合條件的商品</p>
             </div>
           )
@@ -66,7 +68,7 @@ const CardShopApp = (props) => {
       return (
           <div>
             {Header}
-            <div className = "CardShop">
+            <div className = {appClass.CardShop}>
               {product}  
             </div>
           </div>

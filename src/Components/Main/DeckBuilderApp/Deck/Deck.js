@@ -1,16 +1,16 @@
 import React from 'react';
 import Card from '../../../Card/Card';
-import './Deck.css'
+import deckClass from './Deck.css'
 
 const Deck = (props) => {
     return(
-        <div className = "Deck-Wrapper"> 
+        <div className = {deckClass.Wrapper}> 
             <h2>您的牌組</h2>
             <div style = {{display:'flex', justifyContent:'center'}}>
                 <p style = {{marginRight:'5px'}}>牌組張數：{props.decklist.length}</p>
                 <button onClick = {props.btnClick}>一鍵清空</button>
             </div>
-            <div className="Deck" style={props.style}>
+            <div className = {deckClass.Deck}>
             {props.decklist.map( (aCard , index) => {
                 return ( <Card 
                         key = {index}

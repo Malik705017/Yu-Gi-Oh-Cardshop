@@ -6,8 +6,7 @@ import Loading from '../Components/Main/LoadingApp/LoadingApp';
 import DeckBuilder from '../Components/Main/DeckBuilderApp/DeckBuilderApp'
 import CardShop from '../Components/Main/CardShopApp/CardShopApp'
 import Cart from '../Components/Main/ShoppingCartApp/ShoppingCartApp';
-
-import './App.css';
+import appClass from './App.css';
 
 class App extends Component {
   state = {
@@ -211,7 +210,7 @@ class App extends Component {
     const Router = [CardShopApp,DeckBuilderApp,ShopCartApp,CardShopApp,LoadingApp];
 
     return (
-      <div className="App">
+      <div className = {appClass.App}>
         <Nav click = {this.switchHandler} changed = {this.searchProductChangeHandler}/>
           {Router[this.state.mode]}
         <Footer/>

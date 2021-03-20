@@ -1,19 +1,13 @@
 import React from 'react';
-import './Card.css';
+import cardClass from './Card.css';
 
 
-
-
-const Card = (props) => {
-
-    const style = {
-        cursor: 'pointer',
-    };
-    return(
-        <div className = "loader">
-            <img className = "card" alt = "yu-gi-oh card" src = {props.src} onClick = {props.click} style={style}/>  
-        </div>
-    )
-}
+const Card = (props) => 
+    <div className = {cardClass.loader}>
+        <img className = {cardClass.card} 
+             alt = "yu-gi-oh card" 
+             src = {props.src} 
+             onClick = {props.click}/>  
+    </div>
 
 export default Card ;
