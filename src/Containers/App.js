@@ -147,7 +147,7 @@ class App extends Component {
         this.setState({searchCardName:''});
       }
       else if(mode === 3){
-        const productName = document.getElementById("productName").value; //去抓「form 中 input 的值」
+        const productName = document.getElementsByName("productName")[0].value; //去抓「form 中 input 的值」 
         this.setState({searchPNameFromNav:productName});
         this.setState({showButton:false});
       }
