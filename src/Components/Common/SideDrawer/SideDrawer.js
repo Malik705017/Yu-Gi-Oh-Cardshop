@@ -9,6 +9,7 @@ const SRC = "https://i.imgur.com/UpoDOFK.png"
 
 const sideDrawer = (props) => {
     let attachedClasses = [classes.SideDrawer, classes.Close];
+
     if(props.open){
         attachedClasses = [classes.SideDrawer, classes.Open];
     }
