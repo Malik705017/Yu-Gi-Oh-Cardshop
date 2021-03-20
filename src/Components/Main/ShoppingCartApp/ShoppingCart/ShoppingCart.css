@@ -47,13 +47,14 @@
     }
     .W-left{
         width: 45%;
+        margin: 10px;
     }
     .CartList{
         right: 1%;
         width: 44%;
-        margin: 15px;
+        margin: 10px;
     }
     .ListItem{
-        font-size: 5px;
+        font-size: 10px;
     }
 }
