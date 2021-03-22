@@ -10,10 +10,14 @@
     width: 100%;
     display:flex;
     align-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 10px 0;
     background-image:url(https://i.imgur.com/ddfCRBF.jpg);
     background-position: center;
+}
+
+.fixedDeck {
     height: 700px;
 }
 

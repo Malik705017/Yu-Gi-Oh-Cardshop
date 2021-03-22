@@ -7,7 +7,6 @@ const NavItem = (props) => {
     let liClass = navItemClass.displayLi
     if (props.show) {
         liClass = navItemClass.sideLi
-        console.log(liClass)
     }
 
     return(   

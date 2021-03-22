@@ -116,8 +116,8 @@ class App extends Component {
   // 將商品加入購物車的函式
   addProductHandler = (cardName) => {
     let anotherShopCart = [...this.state.shopCart];
-    const index = this.state.shop.findIndex(element => element.name === cardName);
-    let aCard = {...this.state.shop[index]};
+    const index = this.state.db.findIndex(element => element.name === cardName);
+    let aCard = {...this.state.db[index]};
     anotherShopCart.push(aCard);
     this.setState({shopCart : anotherShopCart});
     alert('成功加入至購物車');

@@ -4,7 +4,6 @@ import galleryClass from '../../../CardGallery/CardGallery.css';
 import shopCartClass from './ShoppingCart.css';
 
 const ShoppingCart = (props) => {
-
     /*計算總價*/
     let totalPrice = 0;
     let cardGalleryClass = [galleryClass.CardGallery, shopCartClass.wLeft]
@@ -46,14 +45,11 @@ const ShoppingCart = (props) => {
             <div className = {shopCartClass.CartList}>
                 <p style = {pStyle}>小計：${totalPrice}</p>
                 <div>
-                { props.cards.map( (aCard,index) => {
-                    return( 
-                            <div className = {shopCartClass.ListItem} key = {aCard.id}>
-                                <p>{index+1}.</p>
-                                <p>{aCard.name} {aCard.card_prices[0].amazon_price}</p>
-                            </div>
-                        )
-                        }
+                {   props.cards.map( (aCard,index) =>
+                        (<div className = {shopCartClass.ListItem} key = {aCard.id}>
+                            <p>{index+1}.</p>
+                            <p>{aCard.name} {aCard.card_prices[0].amazon_price}</p>
+                        </div>) 
                     )
                 }
                 </div>
