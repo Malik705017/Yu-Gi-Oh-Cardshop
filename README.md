@@ -4,7 +4,7 @@
 ![展示頁](https://i.imgur.com/eviJUT4.png)
 
 ## Demo 
-本專案部署在 Heroku 上，請點選此 [連結](https://malik-card-game.herokuapp.com/)
+本專案部署在 Heroku 上，請點選此 [連結] 來嘗試看看，也可以跟我回報有什麼 Bug ！(https://malik-card-game.herokuapp.com/)
 
 ## Table of content
 - [Version Update 版本更新](#Version)
@@ -471,5 +471,14 @@ const SearchBox = (props) => {
 ```
 
 ## Notes
+2/6
 這是我第一個自己做的 React project，一直以來就很想做電商商城這類的網站，在寒假終於有時間做一個簡單版的出來，總計花了5天的時間。
 特別感謝：https://db.ygoprodeck.com/api-guide/ 提供了完整的遊戲王卡片資訊，讓我可以直接拿來使用。
+
+3/21
+> 當你東西變得愈來愈複雜，就需要一個架構去把職責切割開來，不然會造成日後維護上的困難。
+
+今天拜讀完 Huli 大的[文章](https://blog.techbridge.cc/2017/09/16/frontend-backend-mvc/)，我覺得文中這句話真的挺好的，當規模大起來時就有這個動機跟需求去寫更好的架構，從一開始把所有東西都擠在 App.js 裡到把三個主要功能拆開成三個 XXApp.js 檔案，現在我有考慮要再把職責切更多讓這三個檔案各自維護 state 了。
+
+
+
