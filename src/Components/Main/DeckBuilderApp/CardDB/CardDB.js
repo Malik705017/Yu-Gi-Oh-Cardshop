@@ -1,24 +1,43 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addCardToDeck, searchCardForDeck } from '../../../../Redux/actions'
 import SearchBox from '../../../Common/SearchBox/SearchBox';
 import Scroll from '../../../Common/Scroll/Scroll';
 import Card from '../../../Card/Card';
 import carddbClass from './CardDB.css'
 
+const mapStateToProps = state => ({
+    cards: state.cardShop.cards,
+    deck: state.deckBuilder.deck,
+    searchName: state.deckBuilder.searchName
+})
+  
+const mapDispatchToProps = dispatch => {
+    return {
+        addCardToDeck: (cardName, deck, cards) => dispatch(addCardToDeck(cardName, deck, cards)),
+        searchCardForDeck: (event) => dispatch(searchCardForDeck(event.target.value))
+    }
+}
+
 const CardDB = (props) => {
-    const db = [...props.db];
-    const click = props.click;
+
+    const { cards, deck, searchName,
+            addCardToDeck, searchCardForDeck } = props
+    
+    const filterCards 
+        =  cards.filter( card => card.name.toLowerCase().includes(searchName.toLowerCase()))
 
     return (
         <div className = {carddbClass.Wrapper}> 
             <h2>卡片資料庫</h2>
-            <SearchBox changed = {props.changed}/>
+            <SearchBox changed = {searchCardForDeck}/>
             <Scroll>
                 <div className = {carddbClass.CardDB}>
-                    { db.map( aCard => 
+                    { filterCards.map( card => 
                         <Card 
-                            key = {aCard.id} 
-                            src = {aCard.card_images[0].image_url}
-                            click = {()=> click(aCard.name)}
+                            key = {card.id} 
+                            src = {card.card_images[0].image_url}
+                            click = {()=> addCardToDeck(card.name, deck , cards)}
                         />  
                         )
                     }
@@ -29,4 +48,4 @@ const CardDB = (props) => {
 }
 
 
-export default CardDB ;
+export default connect(mapStateToProps,mapDispatchToProps)(CardDB) ;

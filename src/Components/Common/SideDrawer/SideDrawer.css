@@ -18,7 +18,7 @@
 }
 
 /*電腦*/
-@media (min-width:500px){
+@media (min-width:1024px){
     .SideDrawer{
         display: none;
     }

@@ -1,22 +1,29 @@
-li {
-    list-style: none;
+.navLink {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.sideLi {
+.sideLink {
     display: block;
     padding: 10px;
     text-align: center;
+    color: rgb(40,103,178);
+    cursor: pointer;
 }
 
 #bars{
     display: none;
+    color: white;
 }
 
 @media (max-width: 1024px){
-    .displayLi {
+    .navLink {
         display: none;
     }
     #bars{
         display: inline;
+        margin: 0 3% 0 3%;
+        padding: 0;
     }
 }

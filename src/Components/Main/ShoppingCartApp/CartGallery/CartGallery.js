@@ -1,15 +1,20 @@
 import React from 'react';
 import CardProduct from '../../../CardProduct/CardProduct';
-import galleryClass from '../../../CardGallery/CardGallery.css';
-import shopCartClass from './ShoppingCart.css';
+import galleryClass from '../../CardShopApp/ShopGallery/ShopGallery.css';
+import shopCartClass from './CartGallery.css';
 
-const ShoppingCart = (props) => {
+
+const CartGallery = (props) => {
+
+    const { cards } = props
+    console.log('hi',cards)
+
     /*計算總價*/
     let totalPrice = 0;
     let cardGalleryClass = [galleryClass.CardGallery, shopCartClass.wLeft]
 
-    for(let i = 0 ; i <  props.cards.length ; i++){
-        totalPrice += parseFloat(props.cards[i].card_prices[0].amazon_price);
+    for(let i = 0 ; i < cards.length ; i++){
+        totalPrice += parseFloat(cards[i].card_prices[0].amazon_price);
     }
 
     /*小數四捨五入（直接copy別人的函式XD）*/
@@ -27,13 +32,13 @@ const ShoppingCart = (props) => {
     return(
         <div className = {shopCartClass.ShoppingCart}>
             <div className = {cardGalleryClass.join(" ")}>
-                { props.cards.map( (aCard,index) => {
+                { cards.map( (aCard,index) => {
                     return ( <CardProduct 
                                 key = {aCard.id}
-                                index = {index}
+                                cardIndex = {index}
                                 src = {aCard.card_images[0].image_url}
-                                name = {aCard.name}
-                                price = {aCard.card_prices[0].amazon_price}
+                                cardName = {aCard.name}
+                                cardPrice = {aCard.card_prices[0].amazon_price}
                                 click = {props.click}
                                 add = {false}
                                 />  
@@ -45,7 +50,7 @@ const ShoppingCart = (props) => {
             <div className = {shopCartClass.CartList}>
                 <p style = {pStyle}>小計：${totalPrice}</p>
                 <div>
-                {   props.cards.map( (aCard,index) =>
+                {  cards.map( (aCard,index) =>
                         (<div className = {shopCartClass.ListItem} key = {aCard.id}>
                             <p>{index+1}.</p>
                             <p>{aCard.name} {aCard.card_prices[0].amazon_price}</p>
@@ -58,4 +63,4 @@ const ShoppingCart = (props) => {
     )
 }
 
-export default ShoppingCart;
+export default CartGallery;

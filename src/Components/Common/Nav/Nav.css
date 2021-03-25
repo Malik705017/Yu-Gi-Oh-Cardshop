@@ -1,4 +1,9 @@
-.header{
+.mainNav{
+    display:flex;
+    align-items: center;
+    font-size:1em;
+    padding: 0 0 0 10px;
+    /*margin:0;*/
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100vw;
@@ -6,27 +11,19 @@
     overflow: hidden;
     background-color: rgb(40,103,178);
 }
-.mainNav{
-    display:flex;
-    align-items: center;
-    list-style:none;
-    font-size:1em;
-    padding: 0 0 0 10px;
-    /*margin:0;*/
-}
 .push{
     display:flex;
     align-items: center;
     margin-left: auto;
     margin-right: 30px;
 }
-.mainNav li{
+.mainNav a{
     padding: 0 20px; /*讓每個li有間隔距離*/
     cursor: pointer;
     color:#f5f5f6;
 }
 
-.mainNav li:hover {
+.mainNav a:hover {
     opacity: 0.8; /*讓顏色變淡*/
 }
 
@@ -64,24 +61,25 @@
 
 
 @media (max-width: 1024px){
-    .search{
+    .search {
         width: 80%;
         padding: 0;
+        margin: 0 8% 0 3%;
+    }
+    .searchIcon {
+        margin: 0 0 0 4%;
     }
 }
 
 @media (max-width: 500px){
-    .mainNav li{
-        padding:10px;
-    }
-    .push{
-        margin-left: 0px; 
-        margin-right: 0px;
-    }
-    .header{
+    .mainNav {
         height: 10%;
     }
-    .mainNav{
-        height: 50%;
+    .mainNav a {
+        padding:10px;
+    }
+    .push {
+        margin-left: 0px; 
+        margin-right: 0px;
     }
 }

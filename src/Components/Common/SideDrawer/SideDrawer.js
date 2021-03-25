@@ -21,13 +21,13 @@ const sideDrawer = (props) => {
                     <Logo/>
                 </div>
                 <nav>
-                    <ul className = {classes.p0}>
-                        <NavItem show = {props.open} click = {() => props.click(0)} text = {"首頁"}/>
-                        <NavItem show = {props.open} click = {() => props.click(1)} text = {"牌組編輯"}/>
-                        <NavItem show = {props.open} click = {() => props.click(0)} text = {"關於本站"}/>
-                        <NavItem show = {props.open} click = {() => props.click(0)} text = {"登入"}/>
-                        <NavItem show = {props.open} click = {() => props.click(2)}><CartLogo src = {SRC}/></NavItem>
-                    </ul>
+                    <NavItem isHome = {true} show = {false} to = {'/'} text = {"首頁"}/>
+                    <NavItem isHome = {false} show = {false} to = {'/deck'} text = {"牌組編輯"}/>
+                    <NavItem isHome = {true} show = {false} to = {'/'} text = {"關於本站"}/>
+                    <NavItem isHome = {false} show = {false} to = {'/'} text = {"登入"}/>
+                    <NavItem isHome = {false} show = {false} to = {'/cart'}>
+                        <CartLogo src = {SRC} />
+                    </NavItem>
                 </nav>
             </div>
         </div>

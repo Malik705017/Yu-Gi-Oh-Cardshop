@@ -1,79 +1,73 @@
 import React from 'react'
-import CardGallery from '../../CardGallery/CardGallery'  
-import Logo from '../../Common/Logo/Logo'
-import appClass from '../../../Containers/App.css'   
+import { connect } from 'react-redux';
+import { changePage } from '../../../Redux/actions'
+import ShopGallery from './ShopGallery/ShopGallery'  
+import Loading from '../LoadingApp/LoadingApp'
+import Header from '../../Common/Header/Header'
+// import SearchBox from '../../Common/SearchBox/SearchBox'
 
+import appClass from '../../../Containers/App.css'   
+import cardShopAppClass from './CardShopApp.css'
+
+const mapStateToProps = state => ({
+  cards: state.cardShop.cards,
+  isPending: state.cardShop.isPending,
+  error: state.cardShop.error,
+  searchName: state.cardShop.searchName,
+  curPage: state.cardShop.curPage,
+  totalPage: state.cardShop.totalPage,
+  shop: state.cardShop.shop,
+  shopCart: state.cart.shopCart
+})
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onChangePage: (cards, lastPage, totalPage, isFoward) => dispatch(changePage(cards, lastPage, totalPage, isFoward)),
+  }
+}
 
 const CardShopApp = (props) => { 
 
-    console.log('CardShopApp')
+  const { isPending, curPage, totalPage, searchName, cards, shop, 
+          onChangePage } 
+        = props    
+  
+  /*當商品展示區沒有符合條件的商品時，顯示「找不到符合挑件的商品」*/
+  const filterCards = searchName !== ''
+    ?
+    cards.filter( (card) => {
+        return card.name.toLowerCase().includes(searchName.toLowerCase());
+    })
+    :
+    shop
+
+  const switchPageButton = isPending || searchName !== ''
+    ?
+    <div></div>
+    :
+    <div className = {cardShopAppClass.divStyle}>
+        <button onClick = {()=>onChangePage(cards, curPage, totalPage, false)}>上一頁</button>
+        <p className = {cardShopAppClass.pStyle}>您目前在第 {curPage} 頁</p>
+        <button onClick = {()=>onChangePage(cards, curPage, totalPage, true)}>下一頁</button>
+    </div>
+
+  
+
+  const content = isPending 
+    ?
+    <Loading/>
+    :
+    <ShopGallery cards = {filterCards}/>
     
-    /*當商品展示區沒有符合條件的商品時，顯示「找不到符合挑件的商品」*/
-    let product = (
-        <div>
-          <h3>找不到符合條件的商品</h3>
-          <div>
-            <img alt = "微笑" src = "https://imgur.com/MXys5Wa.png"></img>
-          </div>
-          <button onClick = {props.backSearchClick}>返回搜尋</button>
+  return (
+      <div>
+        <Header searchName = {searchName} cardNum = {filterCards.length}/>
+        <div className = {appClass.CardShop}>
+          {content}  
         </div>
-      )
-  
-      let searchCardGallery = [];
-      if(props.mode === 3) // 從Nav搜尋
-      { 
-        searchCardGallery = props.database.filter( (aCard) => {
-          return aCard.name.toLowerCase().includes(props.searchNav.toLowerCase());
-        })
-      }
-      else // 從下方快速搜尋欄搜尋
-      {
-        searchCardGallery = props.shop.filter( (aCard) => {
-          return aCard.name.toLowerCase().includes(props.searchBox.toLowerCase());
-        })
-      }
-  
-      if(searchCardGallery.length > 0){
-        product = (
-          <CardGallery 
-            cards = {searchCardGallery} 
-            changed = {props.searchProductChange} 
-            click = {props.addProductClick } 
-            nextPage = {props.nextPage} 
-            curPage = {props.curPage}
-            showButton = {props.showButton}  
-          />
-        )
-      }
-  
-      //網站標題
-      let Header = (
-        <div className = {appClass.Header}>
-          <div className = {appClass.Logo}>
-            <Logo/>
-            <h1 id = {appClass.title}>Malik's卡片商城</h1>
-          </div>
-          <h1 id = {appClass.slogan}>花得更少，買得更好</h1>
-        </div>
-      )
-      
-      if(props.mode === 3) //表示為從Nav搜尋商品
-      {
-          Header = (
-            <div className = {appClass.Header}>
-              <p>搜尋 {props.searchNav} 的結果如下，共 {searchCardGallery.length} 筆符合條件的商品</p>
-            </div>
-          )
-      }
-  
-      return (
-          <div>
-            {Header}
-            <div className = {appClass.CardShop}>
-              {product}  
-            </div>
-          </div>
-      );
+        {switchPageButton}
+      </div>
+  );
 }
 
-export default CardShopApp
+export default connect(mapStateToProps, mapDispatchToProps)(CardShopApp)
