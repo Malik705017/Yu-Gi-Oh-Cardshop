@@ -9,6 +9,8 @@ const mapStateToProps = state => ({
     shopCart: state.cart.shopCart
 })
 
+const SRC = 'https://i.imgur.com/LQpYplk.png'
+
 const ShoppingCartContainer = (props) => {
 
     const { shopCart } = props
@@ -19,7 +21,7 @@ const ShoppingCartContainer = (props) => {
             <h3>您的購物車目前沒有商品唷</h3>
             <div>
                 <img style = {{maxWidth:"100px",marginBottom:"10px"}} 
-                    alt = "購物車" src="https://i.imgur.com/NAwHDGt.png"/>
+                    alt = "購物車" src={SRC}/>
             </div>
             <button><Link to = '/'>前往選購</Link></button>
         </div> 

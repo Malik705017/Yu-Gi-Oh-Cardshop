@@ -4,7 +4,6 @@ import { addCardToCart, rmCardFromCart } from '../../Redux/actions'
 import Card from '../Card/Card';
 import cardProductClass from './CardProduct.css';
 
-
 const mapStateToProps = state => ({
     cards: state.cardShop.cards,
     shopCart: state.cart.shopCart
@@ -16,6 +15,8 @@ const mapDispatchToProps = (dispatch) => {
         rmCardFromCart: (cardIndex, shopCart) => dispatch(rmCardFromCart(cardIndex, shopCart)) 
     }
 } 
+
+const SRC = 'https://i.imgur.com/HjENLRN.png'
 
 const CardProduct = (props) => {
 
@@ -35,7 +36,7 @@ const CardProduct = (props) => {
                     <p className = {cardProductClass.name}>{cardName}</p>
                     <p className = {cardProductClass.price}>USD： {cardPrice}</p>
                 </div>
-                <button onClick = {clickAction}>{text}<img className = {cardProductClass.cartIcon} alt="購物車" src = "https://i.imgur.com/NAwHDGt.png"/></button>
+                <button onClick = {clickAction}>{text}<img className = {cardProductClass.cartIcon} alt="購物車" src = {SRC}/></button>
             </div>
         </div>
     )

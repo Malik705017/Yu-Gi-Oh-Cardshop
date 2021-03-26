@@ -8,7 +8,7 @@ body{
 
 .Header{
   background-color: rgb(255, 255, 255); 
-  color:rgb(40,103,178); 
+  color:black; 
   margin: 150px auto 50px auto; /*防止跟Nav撞到*/
   padding: 10px;
   width: 95%;
@@ -18,7 +18,7 @@ body{
   flex-direction: column;
 }
 
-.Logo{
+.main_header{
   display: flex;
   align-items: center;
 }
@@ -26,7 +26,7 @@ body{
 #title{
     font-size: 80px;
     font-weight: bold;
-    color:  rgb(40,103,178);
+    color:  black;
     margin: 10px;
 }
 
@@ -34,7 +34,7 @@ body{
     font-size: 30px;
     margin: 10px;
     font-weight: bold;
-    color:  rgb(40,103,178);
+    color:  black;
 }
 
 .CardShop{
@@ -54,18 +54,18 @@ button{
   color: whitesmoke;
   border: 0px;
   border-radius: 4px;
-  background-color: rgb(40,103,178);
+  background-color: black;
   padding: 5px;
   cursor: pointer;
 }
 
 .App h3{
-  color: rgb(40,103,178);
+  color: black;
 }
 
 
 @media (max-width:500px){
-  .Logo {
+  .main_header {
     display:block;
   }
   .Header{

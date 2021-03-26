@@ -8,7 +8,7 @@ const Header = (props) => {
   const header = searchName === ''
     ?
     <div className = {appClass.Header}>
-      <div className = {appClass.Logo}>
+      <div className = {appClass.main_header}>
         <Logo/>
         <h1 id = {appClass.title}>Malik's卡片商城</h1>
       </div>

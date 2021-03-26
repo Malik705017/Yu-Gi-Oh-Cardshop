@@ -9,7 +9,7 @@
     width: 100vw;
     height: 100px;
     overflow: hidden;
-    background-color: rgb(40,103,178);
+    background-color: black;
 }
 .push{
     display:flex;
@@ -48,7 +48,8 @@
 }
 
 .searchIcon{
-    background-image: url(https://imgur.com/CwS6GdA.png); /* 16px x 16px */
+    background-image: url(https://imgur.com/J2KA7ZU.png); 
+    background-size: 16px 16px;/* 16px x 16px */
     background-color: #ffffff; /* make the button transparent */
     background-repeat: no-repeat;  /* make the background image appear only once */
     background-position: 6px 6px;  /* equivalent to 'top left' */
