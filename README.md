@@ -44,7 +44,7 @@
 - Deck Builder : 牌組編輯器，可以自己建立牌組。
 
 ## Structure
-此專案的結構相對單純，僅使用到 1 個 container 和 9 個 component，關係如下：
+此架構圖為剛建立專案時的架構，已過時但尚未更新
 ![架構圖](https://imgur.com/w37YrJk.png)
  
 
