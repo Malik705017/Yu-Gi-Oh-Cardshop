@@ -1,7 +1,7 @@
 # Side Project  - 遊戲王卡購物網站
 這是我在上了 Udemy 的 React 課程 [React - the complete guide](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) 的前五章節後，以 React 為前端框架寫的簡易版購物網站，這份文件將會涵蓋以下內容，對自己的學習做點紀錄之餘，也能讓大家了解如何使用這個專案。
 
-![展示頁](https://i.imgur.com/eviJUT4.png)
+![展示頁](https://imgur.com/As47N1l.png)
 
 ## Demo 
 本專案部署在 Heroku 上，請點選此 [連結](https://malik-card-game.herokuapp.com/) 來嘗試看看，也可以跟我回報有什麼 Bug !
@@ -25,6 +25,7 @@
   - v1.3.3 新增 side drawer 並讓圖片 loading 完後能將 gif 移除。(2021/3/20)
   - v1.3.4 改善新增商品到購物車 Bug (`this.state.shop -> this.state.db`)，並移掉測試用的程式碼。(2021/3/22)
 - v1.4 以 redux 重構專案，優化 state management ，此外也導入 react-router-dom 套件來實作 routing 功能。（2021/3/25）
+  - v1.4.1 修改主視覺，將 Linkedin 藍改為純黑色 (2021/3/26)
 
 ## Function
 本專案實作了兩個大功能，分別是卡組編輯器、卡片商城（包含：商品頁面與購物車）。
