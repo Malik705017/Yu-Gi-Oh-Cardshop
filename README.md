@@ -15,17 +15,17 @@
   - [Component 程式碼說明](#Component)
 - [Notes 一些心得筆記](#Notes)
 
-## Version 
-- v1.0 (2021/2/6)
-- v1.1 取代原先將資料下載到本地端的方法，改使用 axios 套件實作 get API 的方法取得資料。並修改部分 bug 以提升效能。（2021/2/24）
-- v1.2 修改原先專案架構，新增三個 component: DeckBuilderApp, ShoppingCartApp, CardShopApp 以減少 App.js render() 中的 code 行數。（2021/2/28）
+## Version
+- v1.4 以 redux 重構專案，優化 state management ，此外也導入 react-router-dom 套件來實作 routing 功能。（2021/3/25）
+  - v1.4.1 修改主視覺，將 Linkedin 藍改為純黑色 (2021/3/26)
 - v1.3 修改網頁為響應式網頁，並改善第一次資料載入期間（fetching data）的畫面顯示（增加 loading.gif）。（2021/3/5）
   - v1.3.1 修改商品欄位配色、優化 layout
   - v1.3.2 將 CSS 改為 CSS module，並對專案結構做調整。 (2021/3/20)
   - v1.3.3 新增 side drawer 並讓圖片 loading 完後能將 gif 移除。(2021/3/20)
   - v1.3.4 改善新增商品到購物車 Bug (`this.state.shop -> this.state.db`)，並移掉測試用的程式碼。(2021/3/22)
-- v1.4 以 redux 重構專案，優化 state management ，此外也導入 react-router-dom 套件來實作 routing 功能。（2021/3/25）
-  - v1.4.1 修改主視覺，將 Linkedin 藍改為純黑色 (2021/3/26)
+- v1.2 修改原先專案架構，新增三個 component: DeckBuilderApp, ShoppingCartApp, CardShopApp 以減少 App.js render() 中的 code 行數。（2021/2/28）
+- v1.1 取代原先將資料下載到本地端的方法，改使用 axios 套件實作 get API 的方法取得資料。並修改部分 bug 以提升效能。（2021/2/24）
+- v1.0 (2021/2/6)
 
 ## Function
 本專案實作了兩個大功能，分別是卡組編輯器、卡片商城（包含：商品頁面與購物車）。
