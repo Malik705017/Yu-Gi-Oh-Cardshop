@@ -3,7 +3,7 @@
     background-color: black;
     color:white;
     height:200px;
-    margin-top:200px;
+    margin-top:300px;
 
     /* 讓Footer中的文字置中 start */
     display: flex;
@@ -14,7 +14,7 @@
 
 @media (max-width:500px){
     .footer{
-        margin-top: 100px;
+        margin-top: 150px;
         height: 100px;
         font-size: 12px;
       }
