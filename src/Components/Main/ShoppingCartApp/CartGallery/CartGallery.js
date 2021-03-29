@@ -48,7 +48,7 @@ const CartGallery = (props) => {
                 }
             </div>
             <div className = {shopCartClass.CartList}>
-                <p style = {pStyle}>小計：${totalPrice}</p>
+                <p style = {pStyle}>總計：${totalPrice}</p>
                 <div>
                 {  cards.map( (aCard,index) =>
                         (<div className = {shopCartClass.ListItem} key = {aCard.id}>

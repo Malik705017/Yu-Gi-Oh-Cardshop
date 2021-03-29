@@ -1,10 +1,9 @@
 .loading{
-    background: transparent url('https://i.imgur.com/GEjoWA8.gif') no-repeat;
+    background: transparent url('https://i.imgur.com/mp8pkX5.gif') no-repeat;
     background-position: center; 
     height: 50px;
 }
 
 .loadText{
-    color: rgb(40,103,178);
     text-align: center;
 }

@@ -4,11 +4,11 @@ import { rmCardFromDeck, clearDeck } from '../../../../Redux/actions'
 import Card from '../../../Card/Card';
 import deckClass from './Deck.css'
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => ({ 
     deck: state.deckBuilder.deck
 })
   
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => { 
     return {
         rmCardFromDeck: (cardIndex, deck) => dispatch(rmCardFromDeck(cardIndex, deck)),
         clearDeck: () => dispatch(clearDeck())

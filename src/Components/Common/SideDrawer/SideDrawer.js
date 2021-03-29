@@ -5,7 +5,7 @@ import CartLogo from '../CartLogo/CartLogo'
 import Logo from '../Logo/Logo'
 import classes from './SideDrawer.css';
 
-const SRC = "https://i.imgur.com/UpoDOFK.png"
+const SRC = 'https://i.imgur.com/LQpYplk.png'
 
 const sideDrawer = (props) => {
     let attachedClasses = [classes.SideDrawer, classes.Close];
