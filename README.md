@@ -9,9 +9,9 @@
 ![電腦版](https://imgur.com/As47N1l.png)
 
 ### 手機版
-![手機版Loading頁](https://i.imgur.com/haW4PV5l.jpg)
-![手機版首頁](https://i.imgur.com/rDCZwDFl.jpg)
-![手機版卡組編輯](https://i.imgur.com/lnKPuall.png)
+![手機版Loading頁](https://i.imgur.com/haW4PV5m.jpg)
+![手機版首頁](https://i.imgur.com/rDCZwDFm.jpg)
+![手機版卡組編輯](https://i.imgur.com/lnKPualm.png)
 
 ## Table of content
 - [Version Update 版本更新](#Version)
