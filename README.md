@@ -20,9 +20,10 @@
 - [Structure 網站結構](#Structure)
   - [Container 程式碼說明](#Container)
   - [Component 程式碼說明](#Component)
+- [Asset 資源](#Asset)
 - [Notes 一些心得筆記](#Notes)
 
-## Version
+## Version-
 - v1.4 以 redux 重構專案，優化 state management ，此外也導入 react-router-dom 套件來實作 routing 功能。（2021/3/25）
   - v1.4.1 修改主視覺，將 Linkedin 藍改為純黑色 (2021/3/26)
 - v1.3 修改網頁為響應式網頁，並改善第一次資料載入期間（fetching data）的畫面顯示（增加 loading.gif）。（2021/3/5）
@@ -55,6 +56,11 @@
 此架構圖為剛建立專案時的架構(2/6)，已過時但尚未更新
 ![架構圖](https://imgur.com/w37YrJk.png)
  
+## Asset
+- 遊戲王 API：https://db.ygoprodeck.com/api-guide/
+- Logo：Canva 自製
+- Loading gif：https://loading.io/
+
 
 ## Notes
 2/6
