@@ -1,10 +1,17 @@
 # Side Project  - 遊戲王卡購物網站
-這是我在上了 Udemy 的 React 課程 [React - the complete guide](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) 的前五章節後，以 React 為前端框架寫的簡易版購物網站，這份文件將會涵蓋以下內容，對自己的學習做點紀錄之餘，也能讓大家了解如何使用這個專案。
+這是我在上了 Udemy 的 React 課程 [React - the complete guide](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) 的前五章節後，以 React 為前端框架寫的簡易版購物網站，本專案為響應式，同時支援電腦與手機，並以 PWA 為目標進行開發。這份 README 將會涵蓋我的版本歷史、如何使用、專案架構與個人心得，對自己的學習做點紀錄之餘，也能讓大家了解如何使用這個專案。
 
-![展示頁](https://imgur.com/As47N1l.png)
+本專案也同步部署在 Heroku 上，請點選此 [連結](https://malik-card-game.herokuapp.com/) 來嘗試看看，也可以跟我回報有什麼 Bug !
 
-## Demo 
-本專案部署在 Heroku 上，請點選此 [連結](https://malik-card-game.herokuapp.com/) 來嘗試看看，也可以跟我回報有什麼 Bug !
+## DEMO
+
+### 電腦版
+![電腦版](https://imgur.com/As47N1l.png)
+
+### 手機版
+![手機版Loading頁](https://i.imgur.com/haW4PV5l.jpg)
+![手機版首頁](https://i.imgur.com/rDCZwDFl.jpg)
+![手機版卡組編輯](https://i.imgur.com/lnKPuall.png)
 
 ## Table of content
 - [Version Update 版本更新](#Version)
