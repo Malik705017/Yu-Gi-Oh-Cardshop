@@ -7,7 +7,6 @@ import shopCartClass from './CartGallery.css';
 const CartGallery = (props) => {
 
     const { cards } = props
-    console.log('hi',cards)
 
     /*計算總價*/
     let totalPrice = 0;

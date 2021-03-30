@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { HashRouter,  Switch } from "react-router-dom";
 import { requestCards } from '../Redux/actions'
@@ -18,22 +18,18 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-class App extends Component {
+function App(props) {
 
-  componentDidMount() {
-    console.log('componentDidMount')
-    this.props.onRequestCards()
-  }
+  const { onRequestCards } = props
+  useEffect(onRequestCards,[])
 
-  render() {
-      return <HashRouter>
-              <Switch>
-                <Layout>
-                  <Router/>
-                </Layout>
-              </Switch>
-             </HashRouter>
-  }
+  return <HashRouter>
+          <Switch>
+            <Layout>
+              <Router/>
+            </Layout>
+          </Switch>
+          </HashRouter>
   
 }
  

@@ -4,7 +4,7 @@ import SideDrawer from '../Components/Common/SideDrawer/SideDrawer'
 import Footer from '../Components/Common/Footer/Footer'
 
 
-const Layout = (props) => {
+function Layout (props) {
     const [showSideDrawer,setSideDrawer] = useState(false)
 
     const openHandler = () => {
