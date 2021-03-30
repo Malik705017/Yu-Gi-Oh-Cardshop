@@ -26,6 +26,7 @@
 ## Version
 - v1.4 以 redux 重構專案，優化 state management ，此外也導入 react-router-dom 套件來實作 routing 功能。（2021/3/25）
   - v1.4.1 修改主視覺，將 Linkedin 藍改為純黑色 (2021/3/26)
+  - v1.4.2 將 class component 全部改成 functional component (hook) (2021/3/30)
 - v1.3 修改網頁為響應式網頁，並改善第一次資料載入期間（fetching data）的畫面顯示（增加 loading.gif）。（2021/3/5）
   - v1.3.1 修改商品欄位配色、優化 layout
   - v1.3.2 將 CSS 改為 CSS module，並對專案結構做調整。 (2021/3/20)
