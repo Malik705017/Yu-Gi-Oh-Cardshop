@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addCardToDeck, searchCardForDeck } from '../../../../Redux/actions'
+import { addCardToDeck, searchCardForDeck } from '../../../../redux/actions'
 import SearchBox from '../../../Common/SearchBox/SearchBox';
 import Scroll from '../../../Common/Scroll/Scroll';
 import Card from '../../../Card/Card';

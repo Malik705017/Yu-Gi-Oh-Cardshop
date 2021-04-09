@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { search } from '../../../../Redux/actions'
+import { search } from '../../../../redux/actions'
 import navClass from '../Nav.css'
 
 const mapStateToProps = state => ({

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { rmCardFromDeck, clearDeck } from '../../../../Redux/actions'
+import { rmCardFromDeck, clearDeck } from '../../../../redux/actions'
 import Card from '../../../Card/Card';
 import deckClass from './Deck.css'
 

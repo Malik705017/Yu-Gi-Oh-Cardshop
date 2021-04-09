@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { clearSearch } from '../../../../Redux/actions'
+import { clearSearch } from '../../../../redux/actions'
 import navItemClass from './NavItem.css'
 
 const mapStateToProps = state => ({})

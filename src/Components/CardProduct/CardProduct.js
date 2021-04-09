@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addCardToCart, rmCardFromCart } from '../../Redux/actions'
+import { addCardToCart, rmCardFromCart } from '../../redux/actions'
 import Card from '../Card/Card';
 import cardProductClass from './CardProduct.css';
 

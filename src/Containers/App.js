@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { HashRouter,  Switch } from "react-router-dom";
-import { requestCards } from '../Redux/actions'
+import { requestCards } from '../redux/actions'
 
 import Layout from './Layout'
 import Router from './Router/Router'
@@ -18,17 +18,17 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-function App(props) {
+function App (props) {
 
   const { onRequestCards } = props
   useEffect(onRequestCards,[])
 
-  return <HashRouter>
-          <Switch>
-            <Layout>
-              <Router/>
-            </Layout>
-          </Switch>
+  return  <HashRouter>
+            <Switch>
+              <Layout>
+                <Router/>
+              </Layout>
+            </Switch>
           </HashRouter>
   
 }
