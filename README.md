@@ -2,6 +2,7 @@
 這是我在上了 Udemy 的 React 課程 [React - the complete guide](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) 的前五章節後，以 React 為前端框架寫的簡易版購物網站，本專案為響應式，同時支援電腦與手機，並以 PWA 為目標進行開發。這份 README 將會涵蓋我的版本歷史、如何使用、專案架構與個人心得，對自己的學習做點紀錄之餘，也能讓大家了解如何使用這個專案。
 
 本專案也同步部署在 Heroku 上，請點選此 [連結](https://malik-card-game.herokuapp.com/) 來嘗試看看，也可以跟我回報有什麼 Bug 或是想新增的功能 !
+(目前也嘗試使用 Azure DevOps，預計近日會將專案部署到 Azure 上！)
 
 ## DEMO
 
@@ -26,6 +27,7 @@
 ## Version
 - v1.4 以 redux 重構專案，優化 state management ，此外也導入 react-router-dom 套件來實作 routing 功能。（2021/3/25）
   - v1.4.1 修改主視覺，將 Linkedin 藍改為純黑色 (2021/3/26)
+  - v1.4.2 將 class component 全部改成 functional component (hook) (2021/3/30)
 - v1.3 修改網頁為響應式網頁，並改善第一次資料載入期間（fetching data）的畫面顯示（增加 loading.gif）。（2021/3/5）
   - v1.3.1 修改商品欄位配色、優化 layout
   - v1.3.2 將 CSS 改為 CSS module，並對專案結構做調整。 (2021/3/20)
